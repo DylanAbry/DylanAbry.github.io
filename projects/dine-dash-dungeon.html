@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Dine & Dash Dungeon | Dylan Abry</title>
+
+    <!-- Notice ../ because this page is inside /projects -->
+    <link rel="stylesheet" href="../styles/styles.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+
+<body>
+
+    <main class="project-details">
+
+        <a href="../index.html" class="back-to-portfolio">
+            <i class="fas fa-arrow-left"></i>
+            Back to Portfolio
+        </a>
+
+        <section class="project-details-hero">
+
+            <div class="project-details-title">
+
+                <p class="project-details-type">
+                    Unity • 3D Horror Puzzle
+                </p>
+
+                <h1>Dine & Dash Dungeon</h1>
+
+                <p class="project-details-summary">
+                    Add your short overview of Pyrokour Dojo here.
+                </p>
+
+                <div class="project-details-skills">
+                    <span>Unity</span>
+                    <span>C#</span>
+                    <span>Unity 3D Animation</span>
+                    <span>UI Design / Programming</span>
+                    <span>Event Systems / Interactables</span>
+                    <span>First-Person Controller</span>
+                    <span>Game System / Puzzle Design</span>
+                    <span>Gameplay Programming</span>
+                    <span>Text Input System</span>
+                    <span>State Management</span>
+                </div>
+
+                <div class="project-external-links">
+
+                    <a href="https://github.com/DylanAbry/DineAndDashDungeon" target="_blank">
+                        <i class="fab fa-github"></i>
+                        GitHub
+                    </a>
+
+                    <a href="https://dylanabry.itch.io/dine-dash-dungeon" target="_blank">
+                        <i class="fas fa-gamepad"></i>
+                        Play on itch.io
+                    </a>
+
+                </div>
+
+            </div>
+
+            <div class="project-details-image">
+                <img src="../img/DineDashDungeon.png" alt="Dine And Dash Dungeon gameplay">
+            </div>
+
+        </section>
+
+        <section class="project-details-section">
+
+            <h2>About the Project</h2>
+
+            <p>
+                The Alchemist Auction is a strategy game where I wanted to expand upon
+                the foundation of the gameplay system I created in The Assassin Auction.
+            </p>
+            <br>
+            <p>
+                <strong>Team: Dylan Abry</strong> (Lead Designer and Developer)
+            </p>
+
+        </section>
+
+        <section class="project-details-section">
+
+            <h2>Gameplay & Media</h2>
+
+            <!-- Screenshots/videos will eventually go here -->
+
+        </section>
+        <section class="project-details-section">
+
+            <h2>What I Built</h2>
+
+            <p>
+                - <strong>Randomized Chef Check-In System</strong>:
+                Chef Scarver periodically checks on the player's table while they explore the restaurant,
+                creating a time-based threat that interrupts the player's puzzle-solving and exploration.
+                Repeating method calls are used to trigger these check-ins throughout gameplay using a 
+                randomly assigned float value that reassigns within a constant range after each call, 
+                introducing uncertainty into when the player can safely leave the table and interact with the 
+                environment. The warning light that appears prior to each check-in adjusts depending on which 
+                state is pulled from an Enum that holds the different types of check-ins the chef will do.
+            </p>
+            <br>
+            <p>
+                - <strong>Item Interactable System</strong>:
+                A first-person interaction system uses raycasting from the player's camera to detect
+                interactable objects within a defined reach distance. Valid objects are visually highlighted
+                to communicate when they can be used, while interaction states control player movement,
+                cursor access, and UI depending on the selected object. Certain interactions are also
+                conditionally enabled based on previously completed objectives, allowing the same system
+                to support progression-dependent puzzles and bonus content.
+            </p>
+            <br>
+            <p>
+                - <strong>String Input System</strong>:
+                Solving the first puzzle requires text input from the player and validating their response
+                against an expected solution. Submitted strings are normalized before comparison to make
+                validation consistent, with separate audio and gameplay responses for correct and incorrect
+                answers. Successful solutions update the puzzle's completion state and persist that progress,
+                allowing later interactions to respond to objectives the player has already completed.
+            </p>
+            <br>
+            <p>
+                - <strong>Puzzle Progression & State Management</strong>:
+                Puzzle completion states are tracked throughout the game and used to determine which
+                interactions and objectives are currently available to the player. Completing certain
+                challenges can unlock previously inaccessible interactables or bonus content, allowing
+                environmental puzzles to build upon the player's previous actions rather than functioning
+                as isolated events. Persistent completion data is also used where necessary to preserve
+                progression between gameplay states.
+            </p>
+        </section>
+
+
+        <section class="project-details-section">
+
+            <h2>Technical Challenges</h2>
+
+            <p>
+                Discuss interesting development problems you encountered
+                and how you solved them.
+            </p>
+
+        </section>
+        <section class="project-details-section">
+
+            <h2>Check Out the Project</h2>
+
+            <div class="project-external-links">
+
+                <a href="https://github.com/DylanAbry/DineAndDashDungeon" target="_blank">
+                    <i class="fab fa-github"></i>
+                    GitHub
+                </a>
+
+                <a href="https://dylanabry.itch.io/dine-dash-dungeon" target="_blank">
+                    <i class="fas fa-gamepad"></i>
+                    Play on itch.io
+                </a>
+
+            </div>
+
+        </section>
+
+    </main>
+
+</body>
+
+</html>

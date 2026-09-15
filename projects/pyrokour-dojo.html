@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Pyrokour Dojo | Dylan Abry</title>
+
+    <!-- Notice ../ because this page is inside /projects -->
+    <link rel="stylesheet" href="../styles/styles.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+
+<body>
+
+    <main class="project-details">
+
+        <a href="../index.html" class="back-to-portfolio">
+            <i class="fas fa-arrow-left"></i>
+            Back to Portfolio
+        </a>
+
+        <section class="project-details-hero">
+
+            <div class="project-details-title">
+
+                <p class="project-details-type">
+                    Unity • 3D Platformer
+                </p>
+
+                <h1>Pyrokour Dojo</h1>
+
+                <p class="project-details-summary">
+                    Inspired by the Japanese game show, MXC with a deadly twist, conquer
+                    a 3D obstacle course over a lake of boiling lava! The course features
+                    <strong>7 </strong> obstacles to beat, which you must do in as fast of a
+                    time as you can! This game can be played with a keyboard or a gamepad.
+                </p>
+
+                <div class="project-details-skills">
+                    <span>Unity</span>
+                    <span>C#</span>
+                    <span>Rendering Optimization</span>
+                    <span>Memory Optimization</span>
+                    <span>Physics Systems</span>
+                    <span>Animator Blend Trees</span>
+                    <span>UI Programming</span>
+                    <span>Cinemachine</span>
+                    <span>GitHub</span>
+                    <span>Input System Integration (Gamepad)</span>
+                    <span>Particle Systems</span>
+                </div>
+
+                <div class="project-external-links">
+
+                    <a href="https://github.com/DylanAbry/CS428InteractiveProject" target="_blank">
+                        <i class="fab fa-github"></i>
+                        GitHub
+                    </a>
+
+                    <a href="https://dylanabry.itch.io/pyrokour-dojo" target="_blank">
+                        <i class="fas fa-gamepad"></i>
+                        Play on itch.io
+                    </a>
+
+                </div>
+
+            </div>
+
+            <div class="project-details-image">
+                <img src="../img/PyrokourDojo.png" alt="Pyrokour Dojo gameplay">
+            </div>
+
+        </section>
+
+        <section class="project-details-section">
+
+            <h2>About the Project</h2>
+
+            <p>
+                Pyrokour Dojo is a Japanese-themed 3D Obby that takes place over a lake of hot boiling lava! Inspired by
+                the early 2000's Japanese game show "MXC", make your way through seven challenging obstacles to complete
+                the course in the fastest time possible!
+            </p>
+            <br>
+            <p>
+                <strong>Team: Dylan Abry</strong> (Lead Designer and Developer),
+                <strong>Nihal Pinto</strong> (Developer), <strong>Srushti Basapuri</strong> (UI Design, Artist),
+                <strong>Krisha Jhala</strong> (Documentation)
+            </p>
+
+        </section>
+
+        <section class="project-details-section">
+
+            <h2>Gameplay & Media</h2>
+
+            <!-- Screenshots/videos will eventually go here -->
+
+        </section>
+        <section class="project-details-section">
+
+            <h2>What I Built</h2>
+
+            <p>
+                - <strong>Gamepad Controller Input Configuration</strong>:
+                Configured gamepad controls for the player's 3D movement and gameplay actions,
+                allowing the platforming mechanics to be played using a controller. Input handling
+                was integrated with the character's movement and animation systems so player actions
+                remain synchronized across gameplay and visual states.
+            </p>
+            <br>
+            <p>
+                - <strong>3D Character Animation with Blend Tree State Management</strong>:
+                Developed an animation state system that connects the player's movement to a
+                3D character Animator. Blend Trees transition between movement animations based
+                on player input and movement state, allowing the character's animations to respond
+                smoothly as the player navigates the platforming environment.
+            </p>
+            <br>
+            <p>
+                - <strong>Ball Pit Object Generation System</strong>:
+                Programmed the ball pit to instantiate a large collection of physics-enabled
+                GameObjects while assigning materials across the generated objects to create
+                visual variation. The system allowed a large environmental feature to be populated
+                programmatically rather than requiring every individual ball to be manually placed.
+            </p>
+            <br>
+            <p>
+                - <strong>Timed and Alternating Obstacle Systems</strong>:
+                Developed multiple obstacles around repeating, time-dependent behaviors. Wall-mounted
+                pushers repeatedly extend and retract to knock the player from platforms, while another
+                obstacle sequence alternates enabled and disabled cones in synchronization with an
+                audio ticking beat. Timing and state changes are coordinated so that players can
+                recognize each obstacle's pattern and time their movement accordingly.
+            </p>
+            <br>
+            <p>
+                - <strong>Player Checkpoint System</strong>:
+                Implemented checkpoints throughout the platforming course that update the player's
+                active respawn position as they progress. When the player falls or reaches a failure
+                state, the system returns them to their most recently activated checkpoint rather
+                than restarting the entire course, and also will add 10 seconds to their time as
+                a penalty. The player activates a checkpoint simply by colliding with any part of the checkpoint
+                platform.
+            </p>
+            <br>
+            <p>
+                - <strong>Memory and Rendering Optimization</strong>:
+                Optimized the project by reducing unnecessarily high-resolution textures, managing
+                repeated objects and materials more efficiently, and reducing the memory and rendering
+                cost of the environment. Texture resolution was reduced from 4K to 1K where the
+                additional detail provided little visible benefit, contributing to a reduction in
+                the project's build size from approximately <strong>2.8</strong> GB to roughly <strong>100</strong> MB
+                while preserving
+                the intended visual presentation.
+            </p>
+
+        </section>
+
+
+        <section class="project-details-section">
+
+            <h2>Technical Challenges</h2>
+
+            <p>
+                Discuss interesting development problems you encountered
+                and how you solved them.
+            </p>
+
+        </section>
+        <section class="project-details-section">
+
+            <h2>Check Out the Project</h2>
+
+            <div class="project-external-links">
+
+                <a href="https://github.com/DylanAbry/CS428InteractiveProject" target="_blank">
+                    <i class="fab fa-github"></i>
+                    GitHub
+                </a>
+
+                <a href="https://dylanabry.itch.io/pyrokour-dojo" target="_blank">
+                    <i class="fas fa-gamepad"></i>
+                    Play on itch.io
+                </a>
+
+            </div>
+
+        </section>
+
+    </main>
+
+</body>
+
+</html>

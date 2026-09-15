@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>The Assassin Auction | Dylan Abry</title>
+
+    <!-- Notice ../ because this page is inside /projects -->
+    <link rel="stylesheet" href="../styles/styles.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+
+<body>
+
+    <main class="project-details">
+
+        <a href="../index.html" class="back-to-portfolio">
+            <i class="fas fa-arrow-left"></i>
+            Back to Portfolio
+        </a>
+
+        <section class="project-details-hero">
+
+            <div class="project-details-title">
+
+                <p class="project-details-type">
+                    Unity • Strategy / Game of Chance
+                </p>
+
+                <h1>The Assassin Auction</h1>
+
+                <p class="project-details-summary">
+                    Add your short overview of The Assassin Auction here.
+                </p>
+
+                <div class="project-details-skills">
+                    <span>Unity</span>
+                    <span>C#</span>
+                    <span>Probability Systems</span>
+                    <span>Data Structure Application</span>
+                    <span>UI Design / Programming</span>
+                    <span>Audacity</span>
+                    <span>Score System</span>
+                    <span>Unity 3D Lighting</span>
+                    <span>Asset Optimization</span>
+                    <span>Player Data Persistence</span>
+                </div>
+
+                <div class="project-external-links">
+
+                    <a href="https://github.com/DylanAbry/TheAssassinAuction" target="_blank">
+                        <i class="fab fa-github"></i>
+                        GitHub
+                    </a>
+
+                    <a href="https://dylanabry.itch.io/the-assassin-auction" target="_blank">
+                        <i class="fas fa-gamepad"></i>
+                        Play on itch.io
+                    </a>
+
+                </div>
+
+            </div>
+
+            <div class="project-details-image">
+                <img src="../img/AssassinAuction.png" alt="The Assassin Auction gameplay">
+            </div>
+
+        </section>
+
+        <section class="project-details-section">
+
+            <h2>About the Project</h2>
+
+            <p>
+                The Alchemist Auction is a strategy game where I wanted to expand upon
+                the foundation of the gameplay system I created in The Assassin Auction.
+            </p>
+            <br>
+            <p>
+                <strong>Team: Dylan Abry</strong> (Lead Designer and Developer), <strong>Srushti Basapuri</strong>
+                (Artist)
+            </p>
+
+        </section>
+
+        <section class="project-details-section">
+
+            <h2>Gameplay & Media</h2>
+
+            <!-- Screenshots/videos will eventually go here -->
+
+        </section>
+        <section class="project-details-section">
+
+            <h2>What I Built</h2>
+
+            <p>
+                - <strong>Randomized Bid Probability System</strong>: Dr. deFraud uses a probability-based bidding
+                system that determines
+                how aggressively he competes for each potion. Each round, his maximum bid is randomized based on the
+                potion's starting value and his available funds, while the player receives a probability guide rather
+                than knowing his exact limit. The system uses escalating bid thresholds with decreasing probabilities of
+                continuing to bid, making deFraud increasingly cautious as prices rise. Because he knows when the
+                auction will end, his behavior also changes strategically during the final round, where he is willing to
+                spend all of his remaining money.
+            </p>
+            <br>
+            <p>
+                - <strong>Dr. deFraud Decision-Making AI</strong>: Dr. deFraud uses rule-based, state-dependent decision
+                logic to
+                evaluate his inventory and choose advantageous actions. His potion-mixing logic searches his available
+                items for combinations and prioritizes the pairing that produces the strongest replica. His trade-in
+                logic evaluates potion tier and monetary value, prioritizing the most valuable potion among his
+                lowest-tier items. Because these decisions are calculated from his current inventory, deFraud's behavior
+                can change dynamically from one playthrough to another.
+            </p>
+            <br>
+            <p>
+                - <strong>Dynamic Auction / Game-State System</strong>: Each auction lasts a randomized 10–15 rounds,
+                with only a
+                selection of the game's 30 potions appearing for bid during each playthrough. Throughout the auction,
+                additional mechanics—including Dr. deFraud's two Pilfer Passes, surprise bonus games, potion mixing, and
+                trade-ins—dynamically alter player inventories, available funds, and strategic opportunities. The
+                combination of randomized content and interconnected game systems ensures that no two auctions play out
+                exactly the same way.
+            </p>
+            <br>
+            <p>
+                - <strong>Randomized Bonus Game Systems</strong>: Bonus games use randomized game-state
+                generation to prevent identical playthroughs. Fisher-Yates shuffling is used for
+                shuffling cards in Matcher and puzzle pieces in Slider. Game-specific validation
+                ensures that despite random shuffling and generation of objects, challenges remain
+                beatable for the player.
+            </p>
+            <br>
+            <p>
+                - <strong>Potion Mixing & Inventory System</strong>: Each potion is represented by a custom C# class
+                that stores
+                properties such as its name and tier value. Potion recipes are managed through a Dictionary, where pairs
+                of ingredient potions are mapped to their resulting potion replica. When the player or Dr. deFraud
+                attempts to mix two potions, the system checks whether the selected combination matches a valid recipe
+                and, if successful, awards a replica with a tier value one level higher than the combined ingredients.
+                Player and opponent inventories are maintained using List collections that update dynamically throughout
+                the auction. Purchasing, pilfering, trading in, and mixing potions can add, remove, or replace inventory
+                data, allowing multiple gameplay systems to operate from the same continuously changing game state.
+            </p>
+            <br>
+            <p>
+                - <strong>Multi-Phase RPG Battle System</strong>: The game's finale transitions the player into a
+                turn-based RPG boss
+                battle against Dr. deFraud, who has 6,000 HP compared to the player's 600 HP. Each turn, the player can
+                use potions with different offensive, healing, and defensive effects, while Dr. deFraud responds through
+                his own attack phase. Defensive actions can reduce incoming damage and create opportunities to
+                counterattack, while cooldowns and status effects influence the player's available strategies. The
+                battle also incorporates the game's economy through opportunities to earn additional funds from quiz
+                questions and purchase resources when needed.
+
+                As Dr. deFraud approaches defeat, the battle progresses through additional states and phases, including
+                the arrival of Fleece deFraud as a 4,000-HP secondary opponent. State-based logic controls transitions
+                between combat, defensive phases, narrative sequences, and the final Destructionatron challenge, where
+                the traditional turn-based battle is replaced by a timed input sequence that determines the game's final
+                outcome.
+            </p>
+            <br>
+            <p>
+                - <strong>Persistent Progression & Completionist Cave</strong>: Player accomplishments are tracked
+                beyond individual
+                auction sessions through a persistent progression system that records completed challenges and unlocked
+                content. These achievements contribute toward the Completionist Cave, a reward area containing
+                additional interactive content and opportunities to revisit features from the main game. The Cave
+                includes replayable bonus games, a functioning television (that plays animations made by me!), and
+                additional activities such as One Percent Present and multiplayer chess, giving players incentives to
+                explore
+                and complete content beyond the primary auction.
+            </p>
+            <br>
+            <p>
+                - <strong>Rule-Based Chess System</strong>: The Completionist Cave features a fully playable chess
+                minigame programmed
+                around the rules and state of an active match. Each piece contains movement logic that determines its
+                valid moves, while the game tracks board state and whose turn is currently active to prevent illegal
+                actions. The system also handles special rule conditions including castling, pawn promotion, and en
+                passant,
+                requiring additional state tracking based on previous moves and the current positions of pieces. The
+                system
+                evaluates king safety to prevent illegal moves and determine check and checkmate conditions. A chess
+                clock independently tracks each player's remaining time and switches between players as turns change,
+                adding
+                another state-dependent system that must remain synchronized with the match.
+            </p>
+
+        </section>
+
+
+        <section class="project-details-section">
+
+            <h2>Technical Challenges</h2>
+
+            <p>
+                Discuss interesting development problems you encountered
+                and how you solved them.
+            </p>
+
+        </section>
+        <section class="project-details-section">
+
+            <h2>Check Out the Project</h2>
+
+            <div class="project-external-links">
+
+                <a href="https://github.com/DylanAbry/TheAssassinAuction" target="_blank">
+                    <i class="fab fa-github"></i>
+                    GitHub
+                </a>
+
+                <a href="https://dylanabry.itch.io/the-assassin-auction" target="_blank">
+                    <i class="fas fa-gamepad"></i>
+                    Play on itch.io
+                </a>
+
+            </div>
+
+        </section>
+
+    </main>
+
+</body>
+
+</html>
