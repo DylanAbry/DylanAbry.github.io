@@ -104,54 +104,23 @@
             <h2>What I Built</h2>
 
             <p>
-                - <strong>Randomized Bid Probability System</strong>: Dr. deFraud uses a probability-based bidding
-                system that determines
-                how aggressively he competes for each potion. Each round, his maximum bid is randomized based on the
-                potion's starting value and his available funds, while the player receives a probability guide rather
-                than knowing his exact limit. The system uses escalating bid thresholds with decreasing probabilities of
-                continuing to bid, making deFraud increasingly cautious as prices rise. Because he knows when the
-                auction will end, his behavior also changes strategically during the final round, where he is willing to
-                spend all of his remaining money.
+                - <strong>Card Matching and Relationship System</strong>: 
             </p>
             <br>
             <p>
-                - <strong>Dr. deFraud Decision-Making AI</strong>: Dr. deFraud uses rule-based, state-dependent decision
-                logic to
-                evaluate his inventory and choose advantageous actions. His potion-mixing logic searches his available
-                items for combinations and prioritizes the pairing that produces the strongest replica. His trade-in
-                logic evaluates potion tier and monetary value, prioritizing the most valuable potion among his
-                lowest-tier items. Because these decisions are calculated from his current inventory, deFraud's behavior
-                can change dynamically from one playthrough to another.
+                - <strong>Mr. Mondomouth Decision-Making AI</strong>: 
             </p>
             <br>
             <p>
-                - <strong>Dynamic Auction / Game-State System</strong>: Each auction lasts a randomized 10–15 rounds,
-                with only a
-                selection of the game's 30 potions appearing for bid during each playthrough. Throughout the auction,
-                additional mechanics—including Dr. deFraud's two Pilfer Passes, surprise bonus games, potion mixing, and
-                trade-ins—dynamically alter player inventories, available funds, and strategic opportunities. The
-                combination of randomized content and interconnected game systems ensures that no two auctions play out
-                exactly the same way.
+                - <strong>Hand and Draw Management System</strong>: 
             </p>
             <br>
             <p>
-                - <strong>Randomized Bonus Game Systems</strong>: Bonus games use randomized game-state
-                generation to prevent identical playthroughs. Fisher-Yates shuffling is used for
-                shuffling cards in Matcher and puzzle pieces in Slider. Game-specific validation
-                ensures that despite random shuffling and generation of objects, challenges remain
-                beatable for the player.
+                - <strong>Turn and Game State Management</strong>: 
             </p>
             <br>
             <p>
-                - <strong>Potion Mixing & Inventory System</strong>: Each potion is represented by a custom C# class
-                that stores
-                properties such as its name and tier value. Potion recipes are managed through a Dictionary, where pairs
-                of ingredient potions are mapped to their resulting potion replica. When the player or Dr. deFraud
-                attempts to mix two potions, the system checks whether the selected combination matches a valid recipe
-                and, if successful, awards a replica with a tier value one level higher than the combined ingredients.
-                Player and opponent inventories are maintained using List collections that update dynamically throughout
-                the auction. Purchasing, pilfering, trading in, and mixing potions can add, remove, or replace inventory
-                data, allowing multiple gameplay systems to operate from the same continuously changing game state.
+                - <strong>Probability-Based CPU Draw System</strong>: 
             </p>
             <br>
             <p>
