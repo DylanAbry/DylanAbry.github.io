@@ -19,7 +19,7 @@
 
     <main class="project-details">
 
-        <a href="../index.html" class="back-to-portfolio">
+        <a href="../index.html#portfolio" class="back-to-portfolio">
             <i class="fas fa-arrow-left"></i>
             Back to Portfolio
         </a>
@@ -35,7 +35,11 @@
                 <h1>Countess Royale</h1>
 
                 <p class="project-details-summary">
-                    
+                    This is my first project completed using Unreal Engine and
+                    C++. It gave me an opportunity to experiment and establish a
+                    foundation of understanding in the components and tools Unreal
+                    offers for its users. In the game, roam around a 3D utopian city,
+                    and fight AI-programmed enemy Countesses!
                 </p>
 
                 <div class="project-details-skills">
@@ -76,11 +80,10 @@
         <section class="project-details-section">
 
             <h2>About the Project</h2>
-
+            This is my first game project I developed using Unreal Engine! Simply roam around a utopian city and battle
+            enemies, avoid hazards, interact with floor switches, and survive your way to the top!
             <p>
-                Pyrokour Dojo is a Japanese-themed 3D Obby that takes place over a lake of hot boiling lava! Inspired by
-                the early 2000's Japanese game show "MXC", make your way through seven challenging obstacles to complete
-                the course in the fastest time possible!
+
             </p>
             <br>
             <p>
@@ -93,7 +96,83 @@
 
             <h2>Gameplay & Media</h2>
 
-            <!-- Screenshots/videos will eventually go here -->
+            <div class="gameplay-media-grid">
+
+                <!-- VIDEO CARD -->
+                <div class="gameplay-media-card">
+
+                    <div class="gameplay-media">
+                        <video controls>
+                            <source src="../game_media/CountessRoyaleGameplay.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+
+                    <div class="gameplay-media-text">
+                        <h3>"Countess Royale" Gameplay</h3>
+
+                        <p>
+                            This clip of gameplay shows the pickup system in the game for health and hazard items, along with 
+                            the game's combat system. Enemies play a death animation once they have no health 
+                            and the objects are destroyed afterwards.
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <!-- IMAGE CARD -->
+                <div class="gameplay-media-card">
+
+                    <div class="gameplay-media">
+                        <img src="../game_media/FloorSwitchBlueprint.png" alt="Mr. Mondomouth character">
+                    </div>
+
+                    <div class="gameplay-media-text">
+                        <h3>Floor Switch Blueprint</h3>
+
+                        <p>
+                            This is the blueprint script that was used for the Floor Switch logic.
+                        </p>
+                    </div>
+
+                </div>
+
+                <div class="gameplay-media-card">
+
+                    <div class="gameplay-media">
+                        <img src="../game_media/EnemyBehaviorTree.png" alt="Mr. Mondomouth character">
+                    </div>
+
+                    <div class="gameplay-media-text">
+                        <h3>Enemy Behavior Tree</h3>
+
+                        <p>
+                            AI behavior tree that was applied to the enemies in the game. It runs through the logic 
+                            of them patrolling, moving to the player target, attacking the player, and returning to their patrol points 
+                            on the map.
+                        </p>
+                    </div>
+
+                </div>
+
+                <div class="gameplay-media-card">
+
+                    <div class="gameplay-media">
+                        <img src="../game_media/AnimMontage.png" alt="Mr. Mondomouth character">
+                    </div>
+
+                    <div class="gameplay-media-text">
+                        <h3>Countess Animation Montage</h3>
+
+                        <p>
+                            The Animation Montage that was used to hold each animation state for Countess. 
+                            It includes idle, run, attack and death animations.
+                        </p>
+                    </div>
+
+                </div>
+            </div>
 
         </section>
         <section class="project-details-section">
@@ -102,25 +181,50 @@
 
             <p>
                 - <strong>Enemies with Human Behavior using NavMesh and AI Behavior Trees</strong>:
+                Developed enemy characters that use Unreal Engine's navigation and AI systems
+                to respond dynamically to the player. Enemies detect the player within an
+                aggression range, navigate toward their position using the NavMesh, and transition
+                between movement and combat behaviors based on distance and gameplay state.
+                Navigation logic allows enemies to pursue the player through the environment
+                rather than following predetermined movement paths.
 
             </p>
             <br>
             <p>
                 - <strong>Door Switch Blueprint</strong>:
+                Created a reusable Blueprint interaction that connects a player-activated switch
+                to a corresponding door. Triggering the switch updates the door's state by raising it upwards
+                to initiate its opening behavior, allowing environmental progression to be
+                controlled through gameplay interactions rather than static level scripting.
 
             </p>
             <br>
             <p>
                 - <strong>Health and Hazard Pickups</strong>:
+                Implemented gameplay objects that modify the player's health through collision
+                and overlap events. Health pickups restore health when collected, while hazards
+                apply damage when encountered, integrating both systems with the same underlying
+                player health logic while enforcing valid health boundaries.
 
             </p>
             <br>
             <p>
                 - <strong>Combat / Health System</strong>:
+                Built combat logic for interactions between the player and enemy characters,
+                including damage processing, health tracking, attacks, and death conditions.
+                Character states are updated as damage is received so that reaching zero health
+                correctly transitions a character out of normal combat behavior and into its
+                death sequence.
             </p>
             <br>
             <p>
                 - <strong>Player and Enemy Character Animation Montage</strong>:
+                Integrated Unreal Engine Animation Montages with gameplay logic to control
+                idle, running, combat and death animations. Attacks trigger their corresponding animation
+                sequences while character state prevents incompatible actions from executing
+                during critical animations. Enemy death behavior also coordinates animation,
+                AI, and collision state so defeated characters no longer continue attacking
+                or interfering with gameplay.
             </p>
         </section>
 
@@ -130,23 +234,35 @@
             <h2>Technical Challenges</h2>
 
             <p>
-                - <strong>Smooth Animation State Transitions with Blend Trees</strong>:
+                - <strong>Coordinating Enemy Detection, Navigation, and Combat States</strong>:
+                Enemy behavior required multiple AI states to work together without conflicting
+                with one another. I connected player detection to NavMesh pursuit and combat
+                conditions so an enemy could identify a target, navigate toward it, stop at an
+                appropriate attack distance, and transition into combat. This required carefully
+                controlling when movement and attack logic were allowed to execute so that
+                navigation did not continue fighting against combat behavior.
             </p>
             <br>
             <p>
-                - <strong>Memory Management via Asset & Texture Optimization</strong>:
+                - <strong>Preventing Enemy Actions After Death</strong>:
+                Initially, defeating an enemy did not automatically stop every system controlling
+                that character, allowing movement, attacks, or collision behavior to interfere
+                with the death sequence. I introduced death-state checks that prevent additional
+                attacks and AI actions once health reaches zero, stop active movement, play the
+                appropriate death montage, and update collision behavior. Coordinating these
+                systems ensured that death functioned as a complete gameplay state rather than
+                only playing an animation.
             </p>
             <br>
             <p>
-                - <strong>Implementing a Ball Pit that Avoids Performance Drop</strong>:
-            </p>
-            <br>
-            <p>
-                - <strong>Cone Obstacle Fairness Assurance</strong>:
-            </p>
-            <br>
-            <p>
-                - <strong>Keyboard/Gamepad Playability</strong>:
+                - <strong>Maintaining AI Navigation Across Complex Level Geometry</strong>:
+                Enemy pursuit depended on having valid NavMesh coverage throughout the playable
+                environment. Areas such as changes in elevation and separated navigation surfaces
+                could interrupt available paths and prevent enemies from reaching the player.
+                I adjusted NavMesh coverage and used Unreal's navigation tools, including Nav Link
+                Proxies where necessary, to establish connections between traversable areas and
+                allow AI characters to continue pursuing the player through more complex sections
+                of the level.
             </p>
 
         </section>

@@ -1,85 +1,148 @@
 console.log("app.js is running");
+
 const sections = document.querySelectorAll('.section');
 const sectBtns = document.querySelectorAll('.control');
 
+
+/* =========================================
+   SHOW SELECTED SECTION
+========================================= */
+
+function showSection(id) {
+
+    // Remove active state from all sections
+    sections.forEach((section) => {
+        section.classList.remove('active');
+    });
+
+    // Remove active state from all navigation buttons
+    sectBtns.forEach((button) => {
+        button.classList.remove('active-btn');
+    });
+
+    // Find matching section
+    const section = document.getElementById(id);
+
+    // Find matching navigation button
+    const navButton = document.querySelector(
+        `.control[data-id="${id}"]`
+    );
+
+    // Activate section
+    if (section) {
+        section.classList.add('active');
+    }
+
+    // Activate navigation button
+    if (navButton) {
+        navButton.classList.add('active-btn');
+    }
+}
+
+
+/* =========================================
+   PAGE TRANSITIONS
+========================================= */
+
 function PageTransitions() {
 
+    // Navigation buttons
     sectBtns.forEach((btn) => {
 
         btn.addEventListener('click', function() {
 
-            // Remove active state from all navigation buttons
-            sectBtns.forEach((button) => {
-                button.classList.remove('active-btn');
-            });
-
-            // Make clicked button active
-            this.classList.add('active-btn');
-
-            // Remove active state from all sections
-            sections.forEach((section) => {
-                section.classList.remove('active');
-            });
-
-            // Get the section ID from the clicked button
             const id = this.dataset.id;
 
-            // Activate matching section
-            const section = document.getElementById(id);
+            // Show selected section
+            showSection(id);
 
-            if (section) {
-                section.classList.add('active');
-            }
+            // Store selected section in URL
+            window.location.hash = id;
         });
+
     });
 
-    // Toggle theme
+
+    /* -----------------------------------------
+       OPEN CORRECT SECTION WHEN PAGE LOADS
+    ----------------------------------------- */
+
+    const startingSection = window.location.hash.substring(1);
+
+    if (
+        startingSection &&
+        document.getElementById(startingSection)
+    ) {
+        showSection(startingSection);
+    } else {
+        showSection('home');
+    }
+
+
+    /* -----------------------------------------
+       LIGHT / DARK MODE
+    ----------------------------------------- */
+
     const themeBtn = document.querySelector('.theme-btn');
 
     if (themeBtn) {
+
         themeBtn.addEventListener('click', () => {
             document.body.classList.toggle('light-mode');
         });
+
     }
 }
 
 PageTransitions();
 
+
+/* =========================================
+   BROWSER BACK / FORWARD
+========================================= */
+
+window.addEventListener('hashchange', () => {
+
+    const id = window.location.hash.substring(1);
+
+    if (
+        id &&
+        document.getElementById(id)
+    ) {
+        showSection(id);
+    } else {
+        showSection('home');
+    }
+
+});
+
+
+/* =========================================
+   VIEW MY WORK BUTTON
+========================================= */
+
 const viewWorkBtn = document.querySelector('.view-work-btn');
 
 if (viewWorkBtn) {
+
     viewWorkBtn.addEventListener('click', function(e) {
+
         e.preventDefault();
 
-        // Remove active state from all sections
-        sections.forEach((section) => {
-            section.classList.remove('active');
-        });
+        // Open portfolio
+        showSection('portfolio');
 
-        // Remove active state from all nav buttons
-        sectBtns.forEach((button) => {
-            button.classList.remove('active-btn');
-        });
+        // Update URL
+        window.location.hash = 'portfolio';
 
-        // Activate portfolio section
-        const portfolioSection = document.getElementById('portfolio');
-
-        if (portfolioSection) {
-            portfolioSection.classList.add('active');
-        }
-
-        // Highlight portfolio nav icon
-        const portfolioNav = document.querySelector(
-            '.control[data-id="portfolio"]'
-        );
-
-        if (portfolioNav) {
-            portfolioNav.classList.add('active-btn');
-        }
     });
+
 }
 
 
+/* =========================================
+   PORTFOLIO FILTERS
+========================================= */
 
 const filterButtons = document.querySelectorAll('.filter-btn');
 const projectCards = document.querySelectorAll('.project-card');
@@ -88,11 +151,12 @@ filterButtons.forEach((button) => {
 
     button.addEventListener('click', () => {
 
-        // Update active filter button
+        // Remove active state from all filter buttons
         filterButtons.forEach((btn) => {
             btn.classList.remove('active-filter');
         });
 
+        // Activate selected filter
         button.classList.add('active-filter');
 
         const filter = button.dataset.filter;
@@ -103,9 +167,14 @@ filterButtons.forEach((button) => {
             const engine = card.dataset.engine;
 
             if (filter === 'all' || engine === filter) {
-                card.style.display = 'block';
+
+                // Let CSS restore the card's normal display value
+                card.style.display = '';
+
             } else {
+
                 card.style.display = 'none';
+
             }
 
         });

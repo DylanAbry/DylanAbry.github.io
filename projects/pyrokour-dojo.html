@@ -19,7 +19,7 @@
 
     <main class="project-details">
 
-        <a href="../index.html" class="back-to-portfolio">
+        <a href="../index.html#portfolio" class="back-to-portfolio">
             <i class="fas fa-arrow-left"></i>
             Back to Portfolio
         </a>
@@ -99,8 +99,117 @@
 
             <h2>Gameplay & Media</h2>
 
-            <!-- Screenshots/videos will eventually go here -->
+            <div class="gameplay-media-grid">
 
+                <div class="gameplay-media-card">
+
+                    <div class="gameplay-media">
+                        <video controls>
+                            <source src="../game_media/Pyrokourdojogameplay.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+
+                    <div class="gameplay-media-text">
+                        <h3>"Pyrokour Dojo" Gameplay</h3>
+
+                        <p>
+                            Footage of Sensei navigating the deadly 3D obstacle course! Huyah!!
+                        </p>
+                    </div>
+
+                </div>
+
+                <div class="gameplay-media-card">
+
+                    <div class="gameplay-media">
+                        <img src="../game_media/SenseiBlendTree.png" alt="Mr. Mondomouth character">
+                    </div>
+
+                    <div class="gameplay-media-text">
+                        <h3>Sensei Animation Blend Tree</h3>
+
+                        <p>
+                            Animation blend tree that was used to ensure smooth transitions between 
+                            Sensei animator states as the player controlled him.
+                        </p>
+                    </div>
+
+                </div>
+
+                <div class="gameplay-media-card">
+
+                    <div class="gameplay-media">
+                        <img src="../game_media/ZenGarden.png" alt="Mr. Mondomouth character">
+                    </div>
+
+                    <div class="gameplay-media-text">
+                        <h3>Starting Zen Garden</h3>
+
+                        <p>
+                           Before the player enters the dangerous obstacle course, they begin the game in 
+                           a peaceful zen garden where they can explore the area and become familiar with the controls.
+                        </p>
+                    </div>
+
+                </div>
+
+                <div class="gameplay-media-card">
+
+                    <div class="gameplay-media">
+                        <img src="../game_media/BallPit.png" alt="Mr. Mondomouth character">
+                    </div>
+
+                    <div class="gameplay-media-text">
+                        <h3>Ball Pit</h3>
+
+                        <p>
+                           Each time the course scene was loaded, a loop instantiated the ball 
+                           objects in the ball pit, each assigned a random material from an array of colors. For 
+                           better performance, material grouping was used to pool objects together with the same material 
+                           instead of randomly assigning each new object a material from the array.
+                        </p>
+                    </div>
+
+                </div>
+
+                <div class="gameplay-media-card">
+
+                    <div class="gameplay-media">
+                        <img src="../game_media/SenseiTModel.png" alt="Mr. Mondomouth character">
+                    </div>
+
+                    <div class="gameplay-media-text">
+                        <h3>Sensei T-Skeleton</h3>
+
+                        <p>
+                           The 3D model for Sensei was downloaded off of Sketchfab. Due to the absence of 
+                           a right collarbone in the skeleton, the animations had to be manually completed 
+                           by myself in the Unity Editor.
+                        </p>
+                    </div>
+
+                </div>
+
+                <div class="gameplay-media-card">
+
+                    <div class="gameplay-media">
+                        <img src="../game_media/HighDive.png" alt="Mr. Mondomouth character">
+                    </div>
+
+                    <div class="gameplay-media-text">
+                        <h3>High Dive!</h3>
+
+                        <p>
+                           The last part of finishing the course is facing your fears and conquering the dreaded 
+                           high dive. Landing in the pool will trigger the win panel that will report the player's 
+                           time to them.
+                        </p>
+                    </div>
+
+                </div>
+
+            </div>
         </section>
         <section class="project-details-section">
 
@@ -169,22 +278,62 @@
 
             <p>
                 - <strong>Smooth Animation State Transitions with Blend Trees</strong>:
+                Connecting player movement to character animation required more than simply
+                switching between individual animation clips. I configured Unity Animator
+                parameters and Blend Trees to translate movement input into animation states,
+                allowing the character to transition smoothly between different locomotion
+                behaviors. Tuning transition conditions and blend values helped prevent abrupt
+                animation changes while keeping the character's visual state synchronized with
+                player movement.
             </p>
             <br>
             <p>
                 - <strong>Memory Management via Asset & Texture Optimization</strong>:
+                The project's original assets created an unnecessarily large memory and storage
+                footprint, particularly through high-resolution textures whose full resolution
+                was not visually necessary during gameplay. I profiled the project's asset usage through analyzing
+                Unity build reports and reduced textures from resolutions as high as 4K to 1K where appropriate.
+                This significantly reduced their memory requirements while preserving acceptable
+                visual quality. Combined with additional asset cleanup and optimization, these
+                changes reduced the packaged project from approximately 2.8 GB to roughly
+                100 MB.
             </p>
             <br>
             <p>
                 - <strong>Implementing a Ball Pit that Avoids Performance Drop</strong>:
+                Creating a convincing ball pit required a large number of simultaneously visible
+                and physics-enabled GameObjects, making a straightforward implementation
+                expensive for both rendering and physics simulation. Instead of manually
+                constructing the pit, I used scripted object instantiation and organized the
+                balls through controlled material groupings. I balanced the number of active
+                objects and their visual variety against the cost of rendering and simulating
+                many individual objects, allowing the ball pit to remain interactive without
+                creating an excessive performance drop.
             </p>
             <br>
             <p>
                 - <strong>Cone Obstacle Fairness Assurance</strong>:
+                The alternating cone obstacle needed to remain challenging without producing
+                patterns that felt unpredictable or impossible to react to. I implemented the
+                obstacle as a timed state sequence in which groups of cones alternate between
+                active and inactive states. These state changes were synchronized with an audio
+                ticking cue, giving the player readable feedback about when the obstacle would
+                change. Coordinating gameplay state with consistent timing and audio feedback
+                allowed the obstacle to create difficulty through player reaction and pattern
+                recognition rather than arbitrary failure. In addition, instead of completely setting
+                cone objects active/inactive, I reassigned them to a translucent material and disabled their
+                colliders when the corresponding colored cones were in the inactive state.
             </p>
             <br>
             <p>
                 - <strong>Keyboard/Gamepad Playability</strong>:
+                Supporting both keyboard and gamepad controls required the same movement and
+                gameplay systems to respond consistently to different forms of input. I mapped
+                equivalent player actions across both control methods and connected them to the
+                same underlying movement and animation logic rather than creating separate
+                gameplay implementations. This allowed players to switch input methods while
+                preserving consistent movement behavior, animation responses, and gameplay
+                functionality.
             </p>
 
         </section>

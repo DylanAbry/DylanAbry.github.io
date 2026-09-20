@@ -19,7 +19,7 @@
 
     <main class="project-details">
 
-        <a href="../index.html" class="back-to-portfolio">
+        <a href="../index.html#portfolio" class="back-to-portfolio">
             <i class="fas fa-arrow-left"></i>
             Back to Portfolio
         </a>
@@ -100,7 +100,104 @@
 
             <h2>Gameplay & Media</h2>
 
-            <!-- Screenshots/videos will eventually go here -->
+            <div class="gameplay-media-grid">
+
+                <!-- VIDEO CARD -->
+                <div class="gameplay-media-card">
+
+                    <div class="gameplay-media">
+                        <video controls>
+                            <source src="../game_media/Dinedashdungeongameplay.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+
+                    <div class="gameplay-media-text">
+                        <h3>"Dine & Dash Dungeon" Gameplay</h3>
+
+                        <p>
+                            Gameplay of Dine & Dash Dungeon that shows Chef Scraver's check-in system (and how to avoid being caught!), 
+                            and interacting by reading clues and holding game objects.
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <!-- IMAGE CARD -->
+                <div class="gameplay-media-card">
+
+                    <div class="gameplay-media">
+                        <img src="../game_media/DDDObjectInteractable.png" alt="Mr. Mondomouth character">
+                    </div>
+
+                    <div class="gameplay-media-text">
+                        <h3>Interactable Game Objects</h3>
+
+                        <p>
+                            Using Unity's Event System and a Raycast from the player, 
+                            objects can be interacted with by being picked up and dropped in the game. This 
+                            feature is essential in solving the game's three puzzle challenges!
+                        </p>
+                    </div>
+
+                </div>
+
+                <div class="gameplay-media-card">
+
+                    <div class="gameplay-media">
+                        <img src="../game_media/RedCheckIn.png" alt="Mr. Mondomouth character">
+                    </div>
+
+                    <div class="gameplay-media-text">
+                        <h3>Red Chef Check-in</h3>
+
+                        <p>
+                            On the red chef check-ins, the player must be inside the prison cell. 
+                            Failure to be inside the cage for a red check-in results in game over.
+                        </p>
+                    </div>
+
+                </div>
+
+                <div class="gameplay-media-card">
+
+                    <div class="gameplay-media">
+                        <img src="../game_media/OrangeCheckIn.png" alt="Mr. Mondomouth character">
+                    </div>
+
+                    <div class="gameplay-media-text">
+                        <h3>Orange Chef Check-in</h3>
+
+                        <p>
+                            On the orange chef check-ins, the player can be outside of the prison cell, but must 
+                            hide behind an object so they cannot be seen. Players will know if they're safe for 
+                            orange check-ins if the heartbeat audio cannot be heard. Failure to successfully hide 
+                            from the chef results in game over.
+                        </p>
+                    </div>
+
+                </div>
+
+                <div class="gameplay-media-card">
+
+                    <div class="gameplay-media">
+                        <img src="../game_media/SafeRoom.png" alt="Mr. Mondomouth character">
+                    </div>
+
+                    <div class="gameplay-media-text">
+                        <h3>Safe Room</h3>
+
+                        <p>
+                            The room that contains the safe with the money to win the game! Players 
+                            will unlock access to this room once they successfully solve the game's main 
+                            puzzle without getting caught by Chef Scarver.
+                        </p>
+                    </div>
+
+                </div>
+
+            </div>
 
         </section>
         <section class="project-details-section">
@@ -155,14 +252,38 @@
 
             <p>
                 - <strong>Safe Zone Implementation</strong>:
+                The chef encounter system required specific areas of the restaurant to function
+                as safe zones without disrupting the rest of the player's exploration. I used
+                collision and trigger-based detection to track when the player entered or exited
+                designated protected areas and incorporated that state into the chef's gameplay
+                logic. This required keeping the player's physical location synchronized with
+                the current encounter state so that check-ins could correctly distinguish
+                between vulnerable and protected positions without creating false detections.
             </p>
             <br>
             <p>
                 - <strong>Interactable State Management</strong>:
+                The restaurant contains multiple interactable objects whose availability changes
+                as the player completes puzzles and progresses through the game. I developed a
+                first-person interaction system that raycasts from the player's camera, validates
+                whether the targeted object is currently interactable, and provides visual
+                feedback for valid targets. Entering an interaction also required coordinating
+                several states at once, including disabling player movement, unlocking the cursor,
+                displaying the appropriate UI, and restoring normal player control when the
+                interaction ended. Progression flags were used to prevent gated interactions
+                from becoming available before their required conditions were completed.
             </p>
             <br>
             <p>
                 - <strong>Repeating Chef Check-In System</strong>:
+                The chef needed to periodically interrupt exploration and check whether the
+                player was in a valid hiding position, creating a recurring threat without requiring
+                the event to be manually triggered. I implemented the system using an InvokeRepeating() method 
+                call that initiated check-ins throughout gameplay and evaluated the
+                player's current state when each check occurs. The challenge was coordinating
+                this recurring logic with exploration, safe-zone detection, and other gameplay
+                states so that a check-in only produced the intended consequence under valid
+                conditions and did not interfere with unrelated interactions or puzzle sequences.
             </p>
 
         </section>

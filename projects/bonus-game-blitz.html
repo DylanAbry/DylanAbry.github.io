@@ -19,7 +19,7 @@
 
     <main class="project-details">
 
-        <a href="../index.html" class="back-to-portfolio">
+        <a href="../index.html#portfolio" class="back-to-portfolio">
             <i class="fas fa-arrow-left"></i>
             Back to Portfolio
         </a>
@@ -95,7 +95,51 @@
 
             <h2>Gameplay & Media</h2>
 
-            <!-- Screenshots/videos will eventually go here -->
+            <div class="gameplay-media-grid">
+
+                <!-- VIDEO CARD -->
+                <div class="gameplay-media-card">
+
+                    <div class="gameplay-media">
+                        <video controls>
+                            <source src="../game_media/BonusGameBlitzGameplay.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+
+                    <div class="gameplay-media-text">
+                        <h3>"Bonus Game Blitz" Gameplay</h3>
+
+                        <p>
+                            Gameplay footage of "Bonus Game Blitz". In this clip, I complete 
+                            one mode of the Slider and Tracer bonus games, receiving the proper 
+                            cash amount for both of them. The TV displays all of the bonus games with their 
+                            three modes to be beaten, and will check each off as it's completed.
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <!-- IMAGE CARD -->
+                <div class="gameplay-media-card">
+
+                    <div class="gameplay-media">
+                        <img src="../game_media/EvaderBonusGame.png" alt="Mr. Mondomouth character">
+                    </div>
+
+                    <div class="gameplay-media-text">
+                        <h3>Evader Bonus Game</h3>
+
+                        <p>
+                            My personal favorite bonus game! In this Undertale-inspired minigame, the player uses the cursor to avoid all 
+                            sorts of projectiles that enter and exit the screen. To win, they must last 
+                            until the timer runs out witout touching any objects.
+                        </p>
+                    </div>
+
+                </div>
+            </div>
 
         </section>
         <section class="project-details-section">
@@ -103,34 +147,36 @@
             <h2>What I Built</h2>
 
             <p>
-                - <strong>Timer System</strong>: Dr. deFraud uses a probability-based bidding
-                system that determines
-                how aggressively he competes for each potion. Each round, his maximum bid is randomized based on the
-                potion's starting value and his available funds, while the player receives a probability guide rather
-                than knowing his exact limit. The system uses escalating bid thresholds with decreasing probabilities of
-                continuing to bid, making deFraud increasingly cautious as prices rise. Because he knows when the
-                auction will end, his behavior also changes strategically during the final round, where he is willing to
-                spend all of his remaining money.
+                - <strong>Timer System</strong>: Since this game is intended to be a speed run challenge, I
+                implemented a timer system that limits the amount of time the player has to complete the three modes
+                of all four bonus games. Depending on the duration of a bonus game, the player will be rewarded with a
+                corresponding
+                amount of extra time added to their total. The timer will pause if the player chooses to pause the game
+                and will continue
+                counting down once they resume. The game will immediately show the player their final score and a
+                "Thanks for Playing" message
+                once the timer hits zero.
             </p>
             <br>
             <p>
-                - <strong>Score Save System</strong>: Dr. deFraud uses rule-based, state-dependent decision
-                logic to
-                evaluate his inventory and choose advantageous actions. His potion-mixing logic searches his available
-                items for combinations and prioritizes the pairing that produces the strongest replica. His trade-in
-                logic evaluates potion tier and monetary value, prioritizing the most valuable potion among his
-                lowest-tier items. Because these decisions are calculated from his current inventory, deFraud's behavior
-                can change dynamically from one playthrough to another.
+                - <strong>Score Save System</strong>: Every mode of each bonus game is programmed to reward the player
+                with
+                a set number of points once completed, depending on how difficult/how long they take to beat. Once time
+                is up,
+                the game will display a "High Score" effect if the player beats the current high score and the new high
+                score will be
+                displayed on the game UI the next time they play the game. Unless the player beats all three modes of
+                every bonus game
+                before time runs out (which is difficult, but possible!), they will always have an opportunity to
+                improve their high score.
             </p>
             <br>
             <p>
-                - <strong>Interactable System</strong>: Each auction lasts a randomized 10–15 rounds,
-                with only a
-                selection of the game's 30 potions appearing for bid during each playthrough. Throughout the auction,
-                additional mechanics—including Dr. deFraud's two Pilfer Passes, surprise bonus games, potion mixing, and
-                trade-ins—dynamically alter player inventories, available funds, and strategic opportunities. The
-                combination of randomized content and interconnected game systems ensures that no two auctions play out
-                exactly the same way.
+                - <strong>Interactable System</strong>: The first-person player is able to interact with
+                surrounding objects, which was achieved using a Raycast from their current position and
+                orientation and Unity's EventSystem library. This enables the player to have full access to
+                the Completionist Cave's bonus games, but excluded access to other interactable features that can
+                only be unlocked by downloading and completing The Alchemist Auction.
             </p>
         </section>
 
@@ -140,8 +186,26 @@
             <h2>Technical Challenges</h2>
 
             <p>
-                Discuss interesting development problems you encountered
-                and how you solved them.
+                - <strong>Transitioning Between First-Person Controller and UI Cursor Gameplay Modes</strong>:
+                Bonus Game Blitz required the player to alternate between first-person exploration
+                and bonus games controlled through interactive UI. I implemented state transitions
+                that disable first-person movement and camera input when entering a UI-driven game,
+                unlock and display the cursor for menu interaction, and then restore the player's
+                controller and camera state when the game ends. Coordinating these input modes
+                prevented both control systems from responding simultaneously and allowed the
+                project to move seamlessly between 3D exploration and cursor-based gameplay.
+            </p>
+            <br>
+            <p>
+                - <strong>Limiting Access of all Completionist Cave Features to Bonus Games Only</strong>:
+                The Completionist Cave contains additional interactive features beyond the primary
+                bonus games, but these needed to remain inaccessible during the normal Bonus Game
+                Blitz progression loop. I implemented conditional state checks that distinguish
+                between standard bonus-game interactions and Completionist Cave content, allowing
+                the shared interaction system to determine which objects and features are valid
+                based on the player's current progression and location. This prevented restricted
+                content from being triggered through unintended interaction paths while still
+                allowing the bonus games to function across both contexts.
             </p>
 
         </section>

@@ -19,7 +19,7 @@
 
     <main class="project-details">
 
-        <a href="../index.html" class="back-to-portfolio">
+        <a href="../index.html#portfolio" class="back-to-portfolio">
             <i class="fas fa-arrow-left"></i>
             Back to Portfolio
         </a>
@@ -92,9 +92,13 @@
                 you trade in a weapon in hopes of replacing it with a stronger one? When will the auction end? Try your
                 luck with multiple unique playthroughs of deadly gambling in The Assassin Auction!
                 <br>
-                <strong>Content Notice</strong>: This game contains offensive language, loud noises and alcoholic references!
+                <br>
+
+                <strong>Content Notice</strong>: This game contains offensive language, loud noises and alcoholic
+                references!
             </p>
             <p>
+                <br>
                 <strong>Team: Dylan Abry</strong> (Lead Designer and Developer), <strong>Srushti Basapuri</strong>
                 (Artist)
             </p>
@@ -105,7 +109,143 @@
 
             <h2>Gameplay & Media</h2>
 
-            <!-- Screenshots/videos will eventually go here -->
+            <div class="gameplay-media-grid">
+
+                <div class="gameplay-media-card featured-media">
+
+                    <div class="gameplay-media">
+                        <iframe src="https://www.youtube.com/embed/v=qIXzJMPA2rw" title="The Assassin Auction Overview"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            allowfullscreen>
+                        </iframe>
+                    </div>
+
+                    <div class="gameplay-media-text">
+                        <h3>The Assassin Auction Overview</h3>
+
+                        <p>
+                            An overview video of "The Assassin Auction" and its gameplay!
+                        </p>
+                    </div>
+
+                </div>
+                <!-- VIDEO CARD -->
+                <div class="gameplay-media-card">
+
+                    <div class="gameplay-media">
+                        <video controls>
+                            <source src="../game_media/Assassinauctiongameplay.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+
+                    <div class="gameplay-media-text">
+                        <h3>"The Assassin Auction" Classic Mode Gameplay</h3>
+
+                        <p>
+                            Gameplay of The Assassin Auction that shows the turn-based bidding system
+                            and trade-in mechanic. The weapon collections and scores will update along with the
+                            transactions that take place throughout the game.
+                        </p>
+                    </div>
+
+                </div>
+
+                <div class="gameplay-media-card">
+
+                    <div class="gameplay-media">
+                        <video controls>
+                            <source src="../game_media/Targettablegameplay.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+
+                    <div class="gameplay-media-text">
+                        <h3>Target Table Mode Gameplay</h3>
+
+                        <p>
+                            This is a playthrough of the Speed bonus game. Players have only a couple seconds
+                            to shoot the Fleece deFraud card that appears while avoiding all the innocent people
+                            cards. Failure to shoot a Fleece deFraud card before it disappears results in a loss.
+                            Players
+                            can play these bonus games as many times as they want once the Target Table is unlocked.
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <!-- IMAGE CARD -->
+                <div class="gameplay-media-card">
+
+                    <div class="gameplay-media">
+                        <img src="../game_media/WeaponTiersPage.png" alt="Mr. Mondomouth character">
+                    </div>
+
+                    <div class="gameplay-media-text">
+                        <h3>Weapon Tiers Page</h3>
+
+                        <p>
+                            Players can win 25 different possible weapons in "Classic" mode and
+                            40 different possible weapons in "deFraud's Deathtrap" mode.
+                        </p>
+                    </div>
+
+                </div>
+
+                <div class="gameplay-media-card">
+
+                    <div class="gameplay-media">
+                        <img src="../game_media/PilferPassMechanic.png" alt="Mr. Mondomouth character">
+                    </div>
+
+                    <div class="gameplay-media-text">
+                        <h3>Pilfer Pass Mechanic</h3>
+
+                        <p>
+                            The "Pilfer Pass" is first introduced in the "deFraud's Deathtrap" mode
+                            where players can choose a weapon to steal from Fleece deFraud's collection. This
+                            mechanic was changed in "The Alchemist Auction" to the game choosing a randomly selected
+                            potion instead of the player getting to choose the potion to steal.
+                        </p>
+                    </div>
+
+                </div>
+
+                <div class="gameplay-media-card">
+
+                    <div class="gameplay-media">
+                        <img src="../game_media/TankWin.png" alt="Mr. Mondomouth character">
+                    </div>
+
+                    <div class="gameplay-media-text">
+                        <h3>Purchasing Items</h3>
+
+                        <p>
+                            I bought a tank!
+                        </p>
+                    </div>
+
+                </div>
+
+                <div class="gameplay-media-card">
+
+                    <div class="gameplay-media">
+                        <img src="../game_media/FleeceTrolling.png" alt="Mr. Mondomouth character">
+                    </div>
+
+                    <div class="gameplay-media-text">
+                        <h3>deFraud Troll Intro</h3>
+
+                        <p>
+                            Every time the player opens the game, they are
+                            welcomed by Fleece deFraud, who will say one of 12 possible
+                            one-liners to the player.
+                        </p>
+                    </div>
+
+                </div>
+            </div>
 
         </section>
         <section class="project-details-section">
@@ -113,31 +253,69 @@
             <h2>What I Built</h2>
 
             <p>
-                - <strong>Randomized Bid Probability System</strong>: 
+                - <strong>Randomized Bid Probability System</strong>:
+                Developed a probability-driven bidding system that determines how auction rounds
+                progress and introduces uncertainty into the opponent's behavior. Bid decisions
+                are influenced by changing thresholds and randomized outcomes, requiring the player
+                to judge when continuing to bid is worth the financial risk rather than following
+                a completely predictable bidding pattern.
             </p>
             <br>
             <p>
-                - <strong>Dynamic Auction / Game-State System</strong>: 
+                - <strong>Dynamic Auction / Game-State System</strong>:
+                Built the central system responsible for controlling the auction loop, including
+                round progression, current bids, player and opponent turns, available funds,
+                purchased weapons, and transitions between gameplay states. The system coordinates
+                these values throughout each auction so that the results of one round correctly
+                influence the state of subsequent rounds. The auction is programmed to have a randomly assigned
+                integer value between 8 to 12 rounds every game so players are required to bid strategic while
+                taking risks.
             </p>
             <br>
             <p>
-                - <strong>Bonus Game Button System</strong>: 
+                - <strong>Bonus Game Button System</strong>:
+                Created an interactive bonus-game system in which buttons dynamically control
+                gameplay events rather than functioning only as static UI elements. The bonus games in The Assassin
+                Auction are all target shooting games, similar to the Police Academy arcade game. They are required to
+                "shoot" the Fleece deFraud cards by clicking/shooting them while avoiding clicking on any innocent
+                people
+                cards that will result in a loss for the player.
             </p>
             <br>
             <p>
-                - <strong>Weapon Inventory & Transaction System</strong>: 
+                - <strong>Weapon Inventory & Transaction System</strong>:
+                Implemented a weapon collection system using C# data structures to track weapons
+                acquired throughout the auction. Weapon information is updated as transactions
+                occur and carried into other portions of the game, allowing purchased items to
+                remain associated with the player and be referenced by later gameplay and
+                presentation systems.
             </p>
             <br>
             <p>
-                - <strong>Multi-mode Game State Management</strong>: 
+                - <strong>Multi-mode Game State Management</strong>:
+                Designed state-management logic to support three distinct game modes within the
+                same project. Shared systems are reused where possible while mode-specific rules,
+                objectives, and progression logic determine how the current session behaves,
+                reducing the need to build completely separate gameplay flows for each mode.
             </p>
             <br>
             <p>
-                - <strong>Persistent Progression & Completionist Cave</strong>: 
+                - <strong>Persistent Progression & Target Table</strong>:
+                Built a progression system that tracks accomplishments throughout the game. Once the player beats
+                a game mode, they will receive access to a new game mode. Once both the "Classic" and "deFraud's
+                Deathtrap" modes are complete, players unlock the "Target Table" where they obtain unlimited access to
+                the three
+                shooting
+                bonus games!
             </p>
             <br>
             <p>
-                - <strong>Strategic Opponent Decision-Making</strong>: 
+                - <strong>Strategic Opponent Decision-Making</strong>:
+                Developed rule-based opponent logic that evaluates the current auction state before
+                selecting an action. Rather than relying entirely on random behavior, the opponent
+                considers relevant gameplay conditions such as available resources and the current
+                bidding situation, combining deterministic rules with probability to create a less
+                predictable competitor.
             </p>
 
         </section>
@@ -148,19 +326,62 @@
             <h2>Technical Challenges</h2>
 
             <p>
-                - <strong>Correctly Updating Scores Throughout Game</strong>:
+                - <strong>Correctly Updating Scores Throughout Game</strong>: The score calculation algorithm
+                initially programmed in the game was for a loop to run through the player and deFraud's weapon
+                collections
+                once the auction was over and add up the tiers of each weapon. However, this method was not working, as
+                requesting
+                Unity to execute these calculations efficiently and load the correct win/lose screen turned out to be
+                unfeasible. Scores
+                were either getting miscalculated or not calculated at all, causing each game to go to Sudden Death when
+                they were not supposed
+                to!
+                <br>
+                The fix was to instead save the scores as two integer variables that would update for each transaction
+                that occurred throughout the game.
+                When an weapon was purchased, pilfered, or traded in, the scores would update accordingly, so by the end
+                of the auction, the scores just
+                had to be compared and the correct result to the game would follow. This bug taught me the importance of
+                performance in games and
+                involving it more in my gameplay coding decision process.
             </p>
             <br>
             <p>
                 - <strong>Keeping Weapons Sorted in Inventory</strong>:
+                In an effort to maintain organized weapon collections for the player and deFraud, I wanted the
+                collection displays to contain
+                no empty spaces if a weapon were to be traded in or pilfered. To accomplish this, I created two List
+                structures that would hold the
+                backend data of the weapon collections as they expanded/condensed throughout the game and two arrays
+                that held the weapon objects and
+                collection placers for the frontend. After each weapon reduction, the List would sort itself to dispose
+                the lost weapon and I used loops
+                to correctly match the remaining weapon objects to the correct display placer in the collection,
+                ensuring any empty spaces were filled after
+                each transaction.
             </p>
             <br>
             <p>
-                - <strong>Weapons in Player Collection Appearing on Win Screen</strong>
+                - <strong>Weapons in Player Collection Appearing on Win Screen</strong>:
+                The auction and win screen exist as separate gameplay states, but the final results
+                screen needed to accurately represent the collection of weapons the player acquired
+                during the auction. I needed to preserve the player's inventory through the
+                transition using a static List and translate the underlying weapon data into the correct visual objects
+                on the results screen. This required synchronizing gameplay data with presentation
+                logic so that only weapons actually purchased by the player were displayed and each
+                collection produced the correct final visualization.
             </p>
             <br>
             <p>
-                - <strong>Sudden Death Tiebreaker State Management</strong>
+                - <strong>Sudden Death Tiebreaker State Management</strong>:
+                A tied outcome required the normal end-of-game flow to be interrupted and redirected
+                into a Sudden Death sequence rather than immediately declaring a winner. I implemented
+                additional state logic to detect the tie condition, preserve the relevant results
+                from the completed game, initialize the tiebreaker, and prevent the standard victory
+                logic from executing prematurely. Once Sudden Death resolved the tie, its result
+                could then return control to the normal end-game flow with a definitive winner. In Sudden Death,
+                the player must win by beating a bonus game and its result will determine the overall outcome of the
+                auction.
             </p>
 
         </section>

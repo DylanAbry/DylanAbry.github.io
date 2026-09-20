@@ -19,7 +19,7 @@
 
     <main class="project-details">
 
-        <a href="../index.html" class="back-to-portfolio">
+        <a href="../index.html#portfolio" class="back-to-portfolio">
             <i class="fas fa-arrow-left"></i>
             Back to Portfolio
         </a>
@@ -35,7 +35,10 @@
                 <h1>The Big Steppa</h1>
 
                 <p class="project-details-summary">
-                    Add your short overview of The Big Steppa here.
+                    An RPG that was developed on Unity in a weekend for the Rutgers
+                    Creation of Game Society's Fall 2024 Scarlet Game Jam. Strategically
+                    fight as Big Steppa (AKA me!) against a massive spider, that uses
+                    random bid probabilities to drop different attacks on you!
                 </p>
 
                 <div class="project-details-skills">
@@ -76,8 +79,14 @@
             <h2>About the Project</h2>
 
             <p>
-                The Alchemist Auction is a strategy game where I wanted to expand upon
-                the foundation of the gameplay system I created in The Assassin Auction.
+                The Big Steppa is a turn-based RPG game that was made in two days for the Rutgers Creation of Games
+                Society Fall 2024 Scarlet Game Jam. Attack, heal and defend as the Big Steppa (me!) against a massive
+                spider!
+                The spider is the game's enemy to fit the "Bug" theme of the Game Jam. In addition to being a fast and
+                fun game to
+                play, The Big Steppa gave me the opportunity to embrace my bold, charismatic side that is now used in
+                game projects
+                I develop to this day!
             </p>
             <br>
             <p>
@@ -90,7 +99,81 @@
 
             <h2>Gameplay & Media</h2>
 
-            <!-- Screenshots/videos will eventually go here -->
+            <div class="gameplay-media-grid">
+
+                <!-- VIDEO CARD -->
+                <div class="gameplay-media-card">
+
+                    <div class="gameplay-media">
+                        <video controls>
+                            <source src="../game_media/Bigsteppagameplay.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+
+                    <div class="gameplay-media-text">
+                        <h3>"The Big Steppa" Gameplay</h3>
+
+                        <p>
+                            This gameplay shows the turn-based sequence of the player and enemy using moves in The Big Steppa. 
+                            Features, both attack forms, along with healing and defending, along with corresponding animations from 
+                            the spider.
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <!-- IMAGE CARD -->
+                <div class="gameplay-media-card">
+
+                    <div class="gameplay-media">
+                        <img src="../game_media/BigSteppa!!!.png" alt="Mr. Mondomouth character">
+                    </div>
+
+                    <div class="gameplay-media-text">
+                        <h3>Big Steppa!!</h3>
+
+                        <p>
+                            The original photo of me that was taken and was used for the game's title screen image.
+                        </p>
+                    </div>
+
+                </div>
+
+                <div class="gameplay-media-card">
+
+                    <div class="gameplay-media">
+                        <img src="../game_media/BigSteppaDefend.png" alt="Mr. Mondomouth character">
+                    </div>
+
+                    <div class="gameplay-media-text">
+                        <h3>Big Steppa Defends Himself</h3>
+
+                        <p>
+                            Big Steppa holds the Rutgers shield to defend himself as the spider prepares for a bite attack!
+                        </p>
+                    </div>
+
+                </div>
+
+                <div class="gameplay-media-card">
+
+                    <div class="gameplay-media">
+                        <img src="../game_media/BigSteppaGameOver.png" alt="Mr. Mondomouth character">
+                    </div>
+
+                    <div class="gameplay-media-text">
+                        <h3>Big Steppa "Game Over" Image</h3>
+
+                        <p>
+                            Big Steppa "Game Over" screen image of me.
+                        </p>
+                    </div>
+
+                </div>
+
+            </div>
 
         </section>
         <section class="project-details-section">
@@ -98,42 +181,33 @@
             <h2>What I Built</h2>
 
             <p>
-                - <strong>RPG Game State Management</strong>: Dr. deFraud uses a probability-based bidding
-                system that determines
-                how aggressively he competes for each potion. Each round, his maximum bid is randomized based on the
-                potion's starting value and his available funds, while the player receives a probability guide rather
-                than knowing his exact limit. The system uses escalating bid thresholds with decreasing probabilities of
-                continuing to bid, making deFraud increasingly cautious as prices rise. Because he knows when the
-                auction will end, his behavior also changes strategically during the final round, where he is willing to
-                spend all of his remaining money.
+                - <strong>RPG Game State Management</strong>:
+                Developed a turn-based combat system that coordinates player and enemy actions,
+                health, damage, healing, defense, special abilities, and victory/death states.
+                The player can choose between Stomp attacks, drinking a beer to restore health,
+                using the Rutgers Shield for defense, or activating Ultrasteppa for over double
+                damage. Ultrasteppa is controlled through its own turn-based charge state,
+                requiring four turns before the ability becomes available and preventing it
+                from being repeatedly used without recharging.
             </p>
             <br>
             <p>
-                - <strong>Probability-Based CPU Move System</strong>: Dr. deFraud uses rule-based, state-dependent decision
-                logic to
-                evaluate his inventory and choose advantageous actions. His potion-mixing logic searches his available
-                items for combinations and prioritizes the pairing that produces the strongest replica. His trade-in
-                logic evaluates potion tier and monetary value, prioritizing the most valuable potion among his
-                lowest-tier items. Because these decisions are calculated from his current inventory, deFraud's behavior
-                can change dynamically from one playthrough to another.
+                - <strong>Probability-Based CPU Move System</strong>:
+                Created randomized decision logic for the Spider enemy that selects between
+                three different offensive moves: Jab, Bite, and Venom. Probability-based
+                selection introduces variation into the Spider's turns so the player cannot
+                rely on a completely predictable attack sequence, while each selected move
+                feeds into the same underlying turn, damage, and combat-state systems.
             </p>
             <br>
             <p>
-                - <strong>3D Animator State Management</strong>: Each auction lasts a randomized 10–15 rounds,
-                with only a
-                selection of the game's 30 potions appearing for bid during each playthrough. Throughout the auction,
-                additional mechanics—including Dr. deFraud's two Pilfer Passes, surprise bonus games, potion mixing, and
-                trade-ins—dynamically alter player inventories, available funds, and strategic opportunities. The
-                combination of randomized content and interconnected game systems ensures that no two auctions play out
-                exactly the same way.
-            </p>
-            <br>
-            <p>
-                - <strong>HP</strong>: Bonus games use randomized game-state
-                generation to prevent identical playthroughs. Fisher-Yates shuffling is used for
-                shuffling cards in Matcher and puzzle pieces in Slider. Game-specific validation
-                ensures that despite random shuffling and generation of objects, challenges remain
-                beatable for the player.
+                - <strong>3D Animator State Management</strong>:
+                Integrated the Spider's four 3D animation states with its combat logic,
+                including Idle, Attack, Take Damage, and Death. Gameplay events trigger the
+                appropriate animation state as combat progresses, allowing attacks to transition
+                out of idle behavior, player damage to produce a visible hit reaction, and zero
+                health to transition the Spider into its death sequence. This keeps the
+                character's visual behavior synchronized with the underlying RPG state.
             </p>
         </section>
 
@@ -143,8 +217,26 @@
             <h2>Technical Challenges</h2>
 
             <p>
-                Discuss interesting development problems you encountered
-                and how you solved them.
+                - <strong>Building an Interconnected RPG Combat System Within a 48-Hour Game Jam</strong>:
+                The Big Steppa was developed during a two-day game jam, requiring the core
+                combat architecture to be designed, implemented, tested, and integrated within
+                a strict 48-hour development window. I prioritized a reusable turn-based state
+                system that could support attacks, healing, defense, enemy decisions, health,
+                animations, and the Ultrasteppa charge mechanic without implementing each
+                feature as an isolated gameplay sequence. Working under the time constraint
+                required careful scope management and rapid debugging while still producing a
+                complete playable combat loop by the end of the jam.
+            </p>
+            <br>
+            <p>
+                - <strong>Synchronizing Combat Logic with Character Animation States</strong>:
+                The Spider's animation needed to remain synchronized with a combat system that
+                could place the enemy in several different states during a turn. I connected
+                gameplay events to the Animator so attacks trigger the appropriate attack
+                animation, incoming damage produces a hit reaction, and reaching zero health
+                transitions into death rather than returning to normal combat behavior.
+                Managing these transitions required ensuring that gameplay state and visual
+                state remained consistent as turns and combat outcomes changed.
             </p>
 
         </section>

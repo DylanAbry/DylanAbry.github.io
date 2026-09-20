@@ -19,7 +19,7 @@
 
     <main class="project-details">
 
-        <a href="../index.html" class="back-to-portfolio">
+        <a href="../index.html#portfolio" class="back-to-portfolio">
             <i class="fas fa-arrow-left"></i>
             Back to Portfolio
         </a>
@@ -96,77 +96,100 @@
 
             <h2>Gameplay & Media</h2>
 
-            <!-- Screenshots/videos will eventually go here -->
+            <div class="gameplay-media-grid">
 
+                <!-- VIDEO CARD -->
+                <div class="gameplay-media-card">
+
+                    <div class="gameplay-media">
+                        <video controls>
+                            <source src="../game_media/Malnutritiousmatchergameplay.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+
+                    <div class="gameplay-media-text">
+                        <h3>"Mr. Mondomouth's Malnutritious Matcher" Gameplay</h3>
+
+                        <p>
+                            Gameplay footage of using the draw, discard and match systems
+                            in Malnutritious Matcher.
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <!-- IMAGE CARD -->
+                <div class="gameplay-media-card">
+
+                    <div class="gameplay-media">
+                        <img src="../game_media/MrMondomouthCharacter.png" alt="Mr. Mondomouth character">
+                    </div>
+
+                    <div class="gameplay-media-text">
+                        <h3>Mr. Mondomouth Character</h3>
+
+                        <p>
+                            The Mr. Mondomouth character was made with a cropped
+                            image of my mouth and a red bow tie attached to it.
+                            To emphasize the character's lack of sanitation, I waited until
+                            the end of the day to get a pic before brushing my teeth so the mouth
+                            could look as unclean as possible!
+                        </p>
+                    </div>
+
+                </div>
+
+            </div>
         </section>
         <section class="project-details-section">
 
             <h2>What I Built</h2>
 
             <p>
-                - <strong>Card Matching and Relationship System</strong>: 
+                - <strong>Card Matching and Relationship System</strong>:
+                Developed a custom card relationship system for a 24-card deck in which cards
+                can have multiple valid matching relationships rather than belonging to only
+                one predefined pair. The system validates selected cards against these
+                relationships and updates the player's hand and game state whenever a valid
+                match is completed.
             </p>
             <br>
             <p>
-                - <strong>Mr. Mondomouth Decision-Making AI</strong>: 
+                - <strong>Mr. Mondomouth Decision-Making AI</strong>:
+                Created rule-based decision logic for Mr. Mondomouth that evaluates his current
+                hand and available actions during each turn. The CPU checks its cards for valid
+                relationships and uses the current state of its hand to determine whether to
+                complete a match, draw additional cards, or perform another available action
+                instead of relying entirely on random choices.
             </p>
             <br>
             <p>
-                - <strong>Hand and Draw Management System</strong>: 
+                - <strong>Hand and Draw Management System</strong>:
+                Implemented dynamic hand management for both the player and CPU, including a
+                six-card hand limit and the ability to draw up to three cards during a turn.
+                The system adds and removes cards as matches, draws, and discards occur while
+                enforcing hand-size and draw restrictions throughout gameplay.
             </p>
             <br>
             <p>
-                - <strong>Turn and Game State Management</strong>: 
+                - <strong>Turn and Game State Management</strong>:
+                Built the central gameplay loop responsible for switching between player and
+                CPU turns and coordinating card selections, completed matches, draws, steals,
+                and hand updates. State checks ensure that actions occur only during the
+                appropriate turn and that control passes correctly once a player's available
+                actions have been completed.
             </p>
             <br>
             <p>
-                - <strong>Probability-Based CPU Draw System</strong>: 
+                - <strong>Probability-Based CPU Draw System</strong>:
+                Developed a probability-based system that helps determine whether Mr. Mondomouth
+                should continue drawing cards. The CPU considers the likelihood of obtaining a
+                useful card rather than automatically using every available draw, allowing its
+                behavior to respond to the current hand and introduce calculated risk into its
+                decision-making.
             </p>
-            <br>
-            <p>
-                - <strong>Multi-Phase RPG Battle System</strong>: The game's finale transitions the player into a
-                turn-based RPG boss
-                battle against Dr. deFraud, who has 6,000 HP compared to the player's 600 HP. Each turn, the player can
-                use potions with different offensive, healing, and defensive effects, while Dr. deFraud responds through
-                his own attack phase. Defensive actions can reduce incoming damage and create opportunities to
-                counterattack, while cooldowns and status effects influence the player's available strategies. The
-                battle also incorporates the game's economy through opportunities to earn additional funds from quiz
-                questions and purchase resources when needed.
-
-                As Dr. deFraud approaches defeat, the battle progresses through additional states and phases, including
-                the arrival of Fleece deFraud as a 4,000-HP secondary opponent. State-based logic controls transitions
-                between combat, defensive phases, narrative sequences, and the final Destructionatron challenge, where
-                the traditional turn-based battle is replaced by a timed input sequence that determines the game's final
-                outcome.
-            </p>
-            <br>
-            <p>
-                - <strong>Persistent Progression & Completionist Cave</strong>: Player accomplishments are tracked
-                beyond individual
-                auction sessions through a persistent progression system that records completed challenges and unlocked
-                content. These achievements contribute toward the Completionist Cave, a reward area containing
-                additional interactive content and opportunities to revisit features from the main game. The Cave
-                includes replayable bonus games, a functioning television (that plays animations made by me!), and
-                additional activities such as One Percent Present and multiplayer chess, giving players incentives to
-                explore
-                and complete content beyond the primary auction.
-            </p>
-            <br>
-            <p>
-                - <strong>Rule-Based Chess System</strong>: The Completionist Cave features a fully playable chess
-                minigame programmed
-                around the rules and state of an active match. Each piece contains movement logic that determines its
-                valid moves, while the game tracks board state and whose turn is currently active to prevent illegal
-                actions. The system also handles special rule conditions including castling, pawn promotion, and en
-                passant,
-                requiring additional state tracking based on previous moves and the current positions of pieces. The
-                system
-                evaluates king safety to prevent illegal moves and determine check and checkmate conditions. A chess
-                clock independently tracks each player's remaining time and switches between players as turns change,
-                adding
-                another state-dependent system that must remain synchronized with the match.
-            </p>
-
         </section>
 
 
@@ -175,8 +198,25 @@
             <h2>Technical Challenges</h2>
 
             <p>
-                Discuss interesting development problems you encountered
-                and how you solved them.
+                - <strong>Managing Nontraditional Card Relationships</strong>:
+                Unlike a traditional matching game where every card belongs to one fixed pair,
+                Malnutritious Matcher allows individual cards to have multiple valid
+                relationships. This required separating a card's identity from its possible
+                matches and validating selections against the relationship rules rather than
+                relying on simple equality checks. The system also needed to remove and update
+                the correct cards without invalidating other potential relationships remaining
+                in each hand.
+            </p>
+            <br>
+            <p>
+                - <strong>Balancing Mr. Mondomouth's Draw Decision Logic</strong>:
+                Mr. Mondomouth needed to make useful decisions without having access to
+                information that should be hidden from the player. I used the CPU's current
+                hand and probability-based decision logic to determine when drawing another
+                card was worthwhile while respecting the three-draw and six-card hand limits.
+                The challenge was creating behavior that could take calculated risks and pursue
+                matches without reducing the opponent to either completely random actions or
+                unfair perfect knowledge.
             </p>
 
         </section>
