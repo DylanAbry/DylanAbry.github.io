@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Wuvlie Warfare | Dylan Abry</title>
+
+    <!-- Notice ../ because this page is inside /projects -->
+    <link rel="stylesheet" href="../styles/styles.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+
+<body>
+
+    <main class="project-details">
+
+        <a href="../index.html#portfolio" class="back-to-portfolio">
+            <i class="fas fa-arrow-left"></i>
+            Back to Portfolio
+        </a>
+
+        <section class="project-details-hero">
+
+            <div class="project-details-title">
+
+                <p class="project-details-type">
+                    Unity • VR Arcade Shooter
+                </p>
+
+                <h1>Wuvlie Warfare</h1>
+
+                <p class="project-details-summary">
+                    A thrilling fast-paced VR arcade shooter where opening chests,
+                    collecting sweet treats, shooting plushies, and achieving the highest
+                    score has never been more fun! With three 3D maps to immerse in, Pinchypup,
+                    Hoppo, Shellshark, and Rattlemeowser, the four members of the Wuvlie family,
+                    are excited for a playdate with you!
+                </p>
+
+                <div class="project-details-skills">
+                    <span>Unity</span>
+                    <span>C#</span>
+                    <span>VR/XR Interaction Toolkit</span>
+                    <span>AI Behavior Graphs</span>
+                    <span>NavMesh</span>
+                    <span>Blender</span>
+                    <span>Procedural Reward/Enemy Spawning</span>
+                    <span>Performance Optimization</span>
+                    <span>Audio Design</span>
+                    <span>Android/Meta Quest Deployment</span>
+                </div>
+
+                <div class="project-external-links">
+
+                    <a href="https://github.com/DylanAbry/WuvlieWarfare" target="_blank">
+                        <i class="fab fa-github"></i>
+                        GitHub
+                    </a>
+
+                    <a href="https://dylanabry.itch.io/pyrokour-dojo" target="_blank">
+                        <i class="fas fa-gamepad"></i>
+                        Play on itch.io
+                    </a>
+
+                </div>
+
+            </div>
+
+            <div class="project-details-image">
+                <img src="img/WuvlieWarfare.jpg" alt="Wuvlie Warfare">
+            </div>
+
+        </section>
+
+        <section class="project-details-section">
+
+            <h2>About the Project</h2>
+
+            <p>
+                Wuvlie Warfare is an VR arcade shooter game that features four evil monster plushies created by myself,
+                known as "The Wuvlies"! The goal of the game is to obtain as high of a score as possible in the limit of
+                5 minutes provided for each round. Points can be scored by collecting all five different sweet treats
+                that randomly spawn throughout
+                the match, opening the mystery chest that has bonus points, or the main way, defeating the Wuvlies
+                patroling the
+                map! The game contains three maps created by myself in Blender that follow a common theme of fun
+                environments
+                my inner child would enjoy exploring. Get ready for playtime with the Wuvlie family!
+            </p>
+            <br>
+            <p>
+                <strong>Team: Dylan Abry</strong> (Lead Designer and Developer)
+            </p>
+
+        </section>
+
+        <section class="project-details-section">
+
+            <h2>Gameplay & Media</h2>
+
+            <div class="gameplay-media-grid">
+
+                <div class="gameplay-media-card">
+
+                    <div class="gameplay-media">
+                        <video controls>
+                            <source src="../game_media/Pyrokourdojogameplay.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+
+                    <div class="gameplay-media-text">
+                        <h3>"Pyrokour Dojo" Gameplay</h3>
+
+                        <p>
+                            Footage of Sensei navigating the deadly 3D obstacle course! Huyah!!
+                        </p>
+                    </div>
+
+                </div>
+
+                <div class="gameplay-media-card">
+
+                    <div class="gameplay-media">
+                        <img src="../game_media/SenseiBlendTree.png" alt="Mr. Mondomouth character">
+                    </div>
+
+                    <div class="gameplay-media-text">
+                        <h3>Sensei Animation Blend Tree</h3>
+
+                        <p>
+                            Animation blend tree that was used to ensure smooth transitions between
+                            Sensei animator states as the player controlled him.
+                        </p>
+                    </div>
+
+                </div>
+
+                <div class="gameplay-media-card">
+
+                    <div class="gameplay-media">
+                        <img src="../game_media/ZenGarden.png" alt="Mr. Mondomouth character">
+                    </div>
+
+                    <div class="gameplay-media-text">
+                        <h3>Starting Zen Garden</h3>
+
+                        <p>
+                            Before the player enters the dangerous obstacle course, they begin the game in
+                            a peaceful zen garden where they can explore the area and become familiar with the controls.
+                        </p>
+                    </div>
+
+                </div>
+
+                <div class="gameplay-media-card">
+
+                    <div class="gameplay-media">
+                        <img src="../game_media/BallPit.png" alt="Mr. Mondomouth character">
+                    </div>
+
+                    <div class="gameplay-media-text">
+                        <h3>Ball Pit</h3>
+
+                        <p>
+                            Each time the course scene was loaded, a loop instantiated the ball
+                            objects in the ball pit, each assigned a random material from an array of colors. For
+                            better performance, material grouping was used to pool objects together with the same
+                            material
+                            instead of randomly assigning each new object a material from the array.
+                        </p>
+                    </div>
+
+                </div>
+
+                <div class="gameplay-media-card">
+
+                    <div class="gameplay-media">
+                        <img src="../game_media/SenseiTModel.png" alt="Mr. Mondomouth character">
+                    </div>
+
+                    <div class="gameplay-media-text">
+                        <h3>Sensei T-Skeleton</h3>
+
+                        <p>
+                            The 3D model for Sensei was downloaded off of Sketchfab. Due to the absence of
+                            a right collarbone in the skeleton, the animations had to be manually completed
+                            by myself in the Unity Editor.
+                        </p>
+                    </div>
+
+                </div>
+
+                <div class="gameplay-media-card">
+
+                    <div class="gameplay-media">
+                        <img src="../game_media/HighDive.png" alt="Mr. Mondomouth character">
+                    </div>
+
+                    <div class="gameplay-media-text">
+                        <h3>High Dive!</h3>
+
+                        <p>
+                            The last part of finishing the course is facing your fears and conquering the dreaded
+                            high dive. Landing in the pool will trigger the win panel that will report the player's
+                            time to them.
+                        </p>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+        <section class="project-details-section">
+
+            <h2>What I Built</h2>
+
+            <p>
+                - <strong>Standalone VR Arcade Shooter</strong>:
+                Developed a complete virtual reality game in Unity 6 using C#, XR Interaction Toolkit and OpenXR,
+                designed for standalone Meta Quest 3 gameplay.
+            </p>
+            <br>
+            <p>
+                - <strong>Intelligent Enemy AI</strong>:
+                Created four unique plushie enemy types with autonomous patrol, player detection, pursuit, and attack
+                behaviors using Unity Behavior Graph and NavMesh pathfinding. Each enemy contains its own movement logic, 
+                detection and follow radii, movement boundaries, and spawn logic.
+            </p>
+            <br>
+            <p>
+                - <strong></strong>:
+                Construct 
+            </p>
+            <br>
+            <p>
+                - <strong>Timed and Alternating Obstacle Systems</strong>:
+                Developed multiple obstacles around repeating, time-dependent behaviors. Wall-mounted
+                pushers repeatedly extend and retract to knock the player from platforms, while another
+                obstacle sequence alternates enabled and disabled cones in synchronization with an
+                audio ticking beat. Timing and state changes are coordinated so that players can
+                recognize each obstacle's pattern and time their movement accordingly.
+            </p>
+            <br>
+            <p>
+                - <strong>Player Checkpoint System</strong>:
+                Implemented checkpoints throughout the platforming course that update the player's
+                active respawn position as they progress. When the player falls or reaches a failure
+                state, the system returns them to their most recently activated checkpoint rather
+                than restarting the entire course, and also will add 10 seconds to their time as
+                a penalty. The player activates a checkpoint simply by colliding with any part of the checkpoint
+                platform.
+            </p>
+            <br>
+            <p>
+                - <strong>Memory and Rendering Optimization</strong>:
+                Optimized the project by reducing unnecessarily high-resolution textures, managing
+                repeated objects and materials more efficiently, and reducing the memory and rendering
+                cost of the environment. Texture resolution was reduced from 4K to 1K where the
+                additional detail provided little visible benefit, contributing to a reduction in
+                the project's build size from approximately <strong>2.8</strong> GB to roughly <strong>100</strong> MB
+                while preserving
+                the intended visual presentation.
+            </p>
+
+        </section>
+
+
+        <section class="project-details-section">
+
+            <h2>Technical Challenges</h2>
+
+            <p>
+                - <strong>Smooth Animation State Transitions with Blend Trees</strong>:
+                Connecting player movement to character animation required more than simply
+                switching between individual animation clips. I configured Unity Animator
+                parameters and Blend Trees to translate movement input into animation states,
+                allowing the character to transition smoothly between different locomotion
+                behaviors. Tuning transition conditions and blend values helped prevent abrupt
+                animation changes while keeping the character's visual state synchronized with
+                player movement.
+            </p>
+            <br>
+            <p>
+                - <strong>Memory Management via Asset & Texture Optimization</strong>:
+                The project's original assets created an unnecessarily large memory and storage
+                footprint, particularly through high-resolution textures whose full resolution
+                was not visually necessary during gameplay. I profiled the project's asset usage through analyzing
+                Unity build reports and reduced textures from resolutions as high as 4K to 1K where appropriate.
+                This significantly reduced their memory requirements while preserving acceptable
+                visual quality. Combined with additional asset cleanup and optimization, these
+                changes reduced the packaged project from approximately 2.8 GB to roughly
+                100 MB.
+            </p>
+            <br>
+            <p>
+                - <strong>Implementing a Ball Pit that Avoids Performance Drop</strong>:
+                Creating a convincing ball pit required a large number of simultaneously visible
+                and physics-enabled GameObjects, making a straightforward implementation
+                expensive for both rendering and physics simulation. Instead of manually
+                constructing the pit, I used scripted object instantiation and organized the
+                balls through controlled material groupings. I balanced the number of active
+                objects and their visual variety against the cost of rendering and simulating
+                many individual objects, allowing the ball pit to remain interactive without
+                creating an excessive performance drop.
+            </p>
+            <br>
+            <p>
+                - <strong>Cone Obstacle Fairness Assurance</strong>:
+                The alternating cone obstacle needed to remain challenging without producing
+                patterns that felt unpredictable or impossible to react to. I implemented the
+                obstacle as a timed state sequence in which groups of cones alternate between
+                active and inactive states. These state changes were synchronized with an audio
+                ticking cue, giving the player readable feedback about when the obstacle would
+                change. Coordinating gameplay state with consistent timing and audio feedback
+                allowed the obstacle to create difficulty through player reaction and pattern
+                recognition rather than arbitrary failure. In addition, instead of completely setting
+                cone objects active/inactive, I reassigned them to a translucent material and disabled their
+                colliders when the corresponding colored cones were in the inactive state.
+            </p>
+            <br>
+            <p>
+                - <strong>Keyboard/Gamepad Playability</strong>:
+                Supporting both keyboard and gamepad controls required the same movement and
+                gameplay systems to respond consistently to different forms of input. I mapped
+                equivalent player actions across both control methods and connected them to the
+                same underlying movement and animation logic rather than creating separate
+                gameplay implementations. This allowed players to switch input methods while
+                preserving consistent movement behavior, animation responses, and gameplay
+                functionality.
+            </p>
+
+        </section>
+        <section class="project-details-section">
+
+            <h2>Check Out the Project</h2>
+
+            <div class="project-external-links">
+
+                <a href="https://github.com/DylanAbry/WuvlieWarfare" target="_blank">
+                    <i class="fab fa-github"></i>
+                    GitHub
+                </a>
+
+                <a href="https://dylanabry.itch.io/pyrokour-dojo" target="_blank">
+                    <i class="fas fa-gamepad"></i>
+                    Play on itch.io
+                </a>
+
+            </div>
+
+        </section>
+
+    </main>
+
+</body>
+
+</html>
