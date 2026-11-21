@@ -50,6 +50,19 @@
     --color-grey-6: #51535a;
 }
 
+html,
+body {
+    // Safety net: nothing should ever make the page scroll sideways
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+img,
+video,
+iframe {
+    max-width: 100%;
+}
+
 body {
     background-color: var(--color-primary);
     font-family: "Share Tech", sans-serif;
@@ -963,7 +976,7 @@ section {
 .blogs {
 
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 380px), 1fr));
     grid-gap: 2rem;
     margin-top: 3rem;
 
@@ -1947,4 +1960,302 @@ section {
         grid-template-columns: 1fr;
     }
 
+}
+/* =====================================================
+   RESPONSIVE LAYOUT
+   Desktop (1920px) keeps the original look. Below that,
+   spacing and columns shrink step by step so the site
+   fits laptops, tablets and phones without cutoffs.
+===================================================== */
+
+// Large laptops (1366px - 1600px)
+@media screen and (max-width: 1600px) {
+    section {
+        padding: 3rem 10rem;
+    }
+
+    #about {
+        padding: 3rem 8rem 5rem 6rem;
+    }
+}
+
+// Small laptops / large tablets
+@media screen and (max-width: 1200px) {
+    section {
+        // Extra space on the right keeps text clear of the side navigation
+        padding: 3rem 7rem 3rem 3rem;
+    }
+
+    #about {
+        padding: 3rem 7rem 5rem 3rem;
+    }
+
+    .main-title h2 {
+        font-size: 3.2rem;
+
+        .bg-text {
+            font-size: 5rem;
+        }
+    }
+
+    .about-container {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+
+    // Photos sit in a tidy grid under the story instead of a tall column
+    .about-photos {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 1.5rem;
+        max-width: 900px;
+    }
+
+    .about-photo {
+        height: auto;
+        aspect-ratio: 4 / 3;
+    }
+
+    .contact-content-container {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+}
+
+// Tablets
+@media screen and (max-width: 900px) {
+
+    .portfolio .portfolio-grid,
+    .animation-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .main-title h2 {
+        font-size: 2.8rem;
+
+        .bg-text {
+            font-size: 4rem;
+        }
+    }
+}
+
+// Phones and small tablets: navigation moves to a bottom bar
+@media screen and (max-width: 768px) {
+
+    section,
+    #about {
+        // Bottom padding leaves room for the navigation bar
+        padding: 4.5rem 1.25rem 7rem;
+    }
+
+    .header-content {
+        padding: 5rem 1.25rem 7rem;
+    }
+
+    .controls {
+        top: auto;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        transform: none;
+
+        flex-direction: row;
+        justify-content: space-around;
+
+        padding: .5rem .5rem calc(.5rem + env(safe-area-inset-bottom));
+        background-color: var(--color-primary);
+        box-shadow: 0 -3px 15px rgba(0, 0, 0, 0.3);
+
+        .control {
+            width: 46px;
+            height: 46px;
+            margin: 0;
+            padding: 0;
+
+            i {
+                font-size: 1.05rem;
+            }
+        }
+    }
+
+    .theme-btn {
+        top: 1rem;
+        right: 1rem;
+        width: 46px;
+        height: 46px;
+        z-index: 11;
+
+        i {
+            font-size: 1.1rem;
+        }
+    }
+
+    .main-title h2 {
+        font-size: 2.3rem;
+        // Leave space so centered titles don't run under the theme button
+        padding: 0 2.5rem;
+
+        .bg-text {
+            font-size: 3rem;
+        }
+    }
+
+    .btn-con {
+        flex-wrap: wrap;
+    }
+
+    .main-btn .btn-text {
+        padding: 0 1.2rem;
+    }
+
+    .about-container {
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+
+        .left-about h4 {
+            font-size: 1.5rem;
+        }
+    }
+
+    .stat-title {
+        padding: 2.5rem 0;
+
+        &::before {
+            width: 70%;
+        }
+    }
+
+    .timeline {
+        padding-bottom: 2rem;
+
+        .timeline-item {
+            padding-left: 3.25rem;
+            padding-bottom: 3rem;
+
+            &::before {
+                left: 19px;
+            }
+
+            .tl-icon {
+                width: 40px;
+                height: 40px;
+
+                i {
+                    font-size: 1rem;
+                }
+            }
+
+            .timeline-content {
+                padding-left: 0;
+            }
+
+            h5 {
+                font-size: 1.2rem;
+
+                span {
+                    font-size: 1rem;
+                }
+            }
+        }
+    }
+
+    .portfolio {
+        .portfolio-filters {
+            flex-wrap: wrap;
+            margin-bottom: 2rem;
+        }
+
+        .portfolio-section {
+            margin-bottom: 3rem;
+        }
+
+        .portfolio-section-title {
+            font-size: 1.5rem;
+        }
+
+        .project-heading {
+            flex-wrap: wrap;
+            gap: .6rem;
+
+            h4 {
+                font-size: 1.3rem;
+            }
+        }
+
+        .project-content {
+            padding: 1.2rem;
+        }
+    }
+
+    .blogs .blog img {
+        height: auto;
+        aspect-ratio: 16 / 9;
+    }
+
+    .animation-heading {
+        flex-wrap: wrap;
+        gap: .6rem;
+
+        h4 {
+            font-size: 1.3rem;
+        }
+    }
+
+    .animation-content {
+        padding: 1.2rem;
+    }
+
+    .contact-content-container {
+        padding-top: 2.5rem;
+        padding-bottom: 2rem;
+    }
+
+    .left-contact h4 {
+        font-size: 1.6rem;
+    }
+
+    .contact-item .contact-details p {
+        overflow-wrap: anywhere;
+    }
+
+    .right-contact {
+        padding: 1.25rem;
+    }
+
+    .gameplay-media-text {
+        padding: 1.2rem;
+    }
+}
+
+// Phones
+@media screen and (max-width: 600px) {
+
+    .about-photos {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-form .i-c-2 {
+        grid-template-columns: 1fr;
+        gap: 0;
+
+        input {
+            margin-bottom: 1.2rem;
+        }
+    }
+
+    .main-title h2 {
+        font-size: 2rem;
+
+        .bg-text {
+            font-size: 2.6rem;
+        }
+    }
+}
+
+// Short laptop screens (e.g. 1366x768, 1280x720)
+@media screen and (min-width: 1001px) and (max-height: 800px) {
+    .header-content .left-header .photo-collage {
+        height: 80vh;
+        min-height: 0;
+    }
 }
