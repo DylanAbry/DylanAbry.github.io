@@ -62,7 +62,7 @@
                         GitHub
                     </a>
 
-                    <a href="https://dylanabry.itch.io/pyrokour-dojo" target="_blank">
+                    <a href="https://dylanabry.itch.io/wuvlie-warfare" target="_blank">
                         <i class="fas fa-gamepad"></i>
                         Play on itch.io
                     </a>
@@ -100,25 +100,43 @@
         </section>
 
         <section class="project-details-section">
-
             <h2>Gameplay & Media</h2>
 
             <div class="gameplay-media-grid">
 
-                <div class="gameplay-media-card">
+                <div class="gameplay-media-card featured-media">
 
                     <div class="gameplay-media">
-                        <video controls>
-                            <source src="../game_media/Pyrokourdojogameplay.mp4" type="video/mp4">
-                            Your browser does not support the video tag.
-                        </video>
+                        <iframe src="game_media/Wuvlie Warfare Trailer.mp4" title="Wuvlie Warfare Trailer"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            allowfullscreen>
+                        </iframe>
                     </div>
 
                     <div class="gameplay-media-text">
-                        <h3>"Pyrokour Dojo" Gameplay</h3>
+                        <h3>Wuvlie Warfare Trailer</h3>
 
                         <p>
-                            Footage of Sensei navigating the deadly 3D obstacle course! Huyah!!
+                            A trailer that I made for the game Wuvlie Warfare prior to its release on itch.io!
+                        </p>
+                    </div>
+
+                </div>
+                <!-- IMAGE -->
+                <div class="gameplay-media-card">
+
+                    <div class="gameplay-media">
+                        <img src="../img/HereComesRattlemeowser.PNG" alt="Description of gameplay screenshot">
+                    </div>
+
+                    <div class="gameplay-media-text">
+                        <h3>Here Comes Rattlemeowser!</h3>
+
+                        <p>
+                            Each plushy contains a detection radius and a chase radius. If the player crosses a plushy's detection radius, then 
+                            the plushy will use the NavMesh to reach the player's location through the closest possible path. If the player manages 
+                            to exit a plushy's chase radius (which is way larger than the detection one!), the plushy will lose interest and stop chasing after the 
+                            player.
                         </p>
                     </div>
 
@@ -127,15 +145,14 @@
                 <div class="gameplay-media-card">
 
                     <div class="gameplay-media">
-                        <img src="../game_media/SenseiBlendTree.png" alt="Mr. Mondomouth character">
+                        <img src="../img/ChestBonusPoints.jpg" alt="Description of gameplay screenshot">
                     </div>
 
                     <div class="gameplay-media-text">
-                        <h3>Sensei Animation Blend Tree</h3>
+                        <h3>Chest Bonus Points</h3>
 
                         <p>
-                            Animation blend tree that was used to ensure smooth transitions between
-                            Sensei animator states as the player controlled him.
+                            Each game, one chest contains a special bonus points gift that rewards the player 1 to 5 extra points to their game score!
                         </p>
                     </div>
 
@@ -144,15 +161,15 @@
                 <div class="gameplay-media-card">
 
                     <div class="gameplay-media">
-                        <img src="../game_media/ZenGarden.png" alt="Mr. Mondomouth character">
+                        <img src="../img/HueballCircus.PNG" alt="Description of gameplay screenshot">
                     </div>
 
                     <div class="gameplay-media-text">
-                        <h3>Starting Zen Garden</h3>
+                        <h3>Hueball Circus Ball Fun</h3>
 
                         <p>
-                            Before the player enters the dangerous obstacle course, they begin the game in
-                            a peaceful zen garden where they can explore the area and become familiar with the controls.
+                            Hueball Circus, the game's first map, features balls of different colors that the player and plushies can knock around 
+                            for fun.
                         </p>
                     </div>
 
@@ -161,18 +178,15 @@
                 <div class="gameplay-media-card">
 
                     <div class="gameplay-media">
-                        <img src="../game_media/BallPit.png" alt="Mr. Mondomouth character">
+                        <img src="../img/BonusTreats.jpg" alt="Description of gameplay screenshot">
                     </div>
 
                     <div class="gameplay-media-text">
-                        <h3>Ball Pit</h3>
+                        <h3>Sweet Treat Bonus</h3>
 
                         <p>
-                            Each time the course scene was loaded, a loop instantiated the ball
-                            objects in the ball pit, each assigned a random material from an array of colors. For
-                            better performance, material grouping was used to pool objects together with the same
-                            material
-                            instead of randomly assigning each new object a material from the array.
+                           In each game, bonus treats will randomly appear for the player to collect. If all five are collected -- the 
+                           cookie, ice cream, chocolate bar, donut, and lollipop -- the player is awarded 15 extra points to their score!
                         </p>
                     </div>
 
@@ -181,34 +195,16 @@
                 <div class="gameplay-media-card">
 
                     <div class="gameplay-media">
-                        <img src="../game_media/SenseiTModel.png" alt="Mr. Mondomouth character">
+                        <img src="../img/LowGPark.PNG" alt="Description of gameplay screenshot">
                     </div>
 
                     <div class="gameplay-media-text">
-                        <h3>Sensei T-Skeleton</h3>
+                        <h3>Low-G Park Map</h3>
 
                         <p>
-                            The 3D model for Sensei was downloaded off of Sketchfab. Due to the absence of
-                            a right collarbone in the skeleton, the animations had to be manually completed
-                            by myself in the Unity Editor.
-                        </p>
-                    </div>
-
-                </div>
-
-                <div class="gameplay-media-card">
-
-                    <div class="gameplay-media">
-                        <img src="../game_media/HighDive.png" alt="Mr. Mondomouth character">
-                    </div>
-
-                    <div class="gameplay-media-text">
-                        <h3>High Dive!</h3>
-
-                        <p>
-                            The last part of finishing the course is facing your fears and conquering the dreaded
-                            high dive. Landing in the pool will trigger the win panel that will report the player's
-                            time to them.
+                            As the name of the map implies, the gravitational force of Low-G Park is reduced to about 0.1x of normal gravity, 
+                            allowing the player to jump through the air and bounce to unbelievable heights on the map's trampolines, as if they 
+                            were actually in space!
                         </p>
                     </div>
 
@@ -229,45 +225,36 @@
             <p>
                 - <strong>Intelligent Enemy AI</strong>:
                 Created four unique plushie enemy types with autonomous patrol, player detection, pursuit, and attack
-                behaviors using Unity Behavior Graph and NavMesh pathfinding. Each enemy contains its own movement logic, 
+                behaviors using Unity Behavior Graph and NavMesh pathfinding. Each enemy contains its own movement
+                behavior,
                 detection and follow radii, movement boundaries, and spawn logic.
             </p>
             <br>
             <p>
-                - <strong></strong>:
-                Construct 
-            </p>
-            <br>
-            <p>
-                - <strong>Timed and Alternating Obstacle Systems</strong>:
-                Developed multiple obstacles around repeating, time-dependent behaviors. Wall-mounted
-                pushers repeatedly extend and retract to knock the player from platforms, while another
-                obstacle sequence alternates enabled and disabled cones in synchronization with an
-                audio ticking beat. Timing and state changes are coordinated so that players can
-                recognize each obstacle's pattern and time their movement accordingly.
-            </p>
-            <br>
-            <p>
-                - <strong>Player Checkpoint System</strong>:
-                Implemented checkpoints throughout the platforming course that update the player's
-                active respawn position as they progress. When the player falls or reaches a failure
-                state, the system returns them to their most recently activated checkpoint rather
-                than restarting the entire course, and also will add 10 seconds to their time as
-                a penalty. The player activates a checkpoint simply by colliding with any part of the checkpoint
-                platform.
-            </p>
-            <br>
-            <p>
-                - <strong>Memory and Rendering Optimization</strong>:
-                Optimized the project by reducing unnecessarily high-resolution textures, managing
-                repeated objects and materials more efficiently, and reducing the memory and rendering
-                cost of the environment. Texture resolution was reduced from 4K to 1K where the
-                additional detail provided little visible benefit, contributing to a reduction in
-                the project's build size from approximately <strong>2.8</strong> GB to roughly <strong>100</strong> MB
-                while preserving
-                the intended visual presentation.
-            </p>
+                - <strong>Three Themed 3D Environments in Blender</strong>:
+                Created an interactive circus, waterpark, and space arena in Blender for the game's environments. Each
+                area contains
+                its own distinct layout, environmental mechanics (ex: water physics in Clementine Pool or trampolines in
+                Low-G Park)
+                and navigation constraints.
 
+            </p>
+            <br>
+            <p>
+                - <strong>Dynamic Gameplay Systems</strong>:
+                Implemented randomized enemy and item spawning, weapon and chest interactions, projectile-based combat,
+                health and damage systems,
+                collectible rewards, and achievement tracking. Also provided a timed charging system for the game using
+                XR socket interactables so players
+                could reload their weapons once they ran out of ammo.
+            </p>
+            <br>
+            <p>
+                - <strong>Custom Audio, Voicing and UI</strong>:
+                Composed original soundtracks for each environment using Soundtrap and Audacity, integrated contextual
+                sound effects, and developed interactive menus, HUD elements,
+                and achievement displays. In addition, I acted as the voice for all four Wuvlie plushies!
+            </p>
         </section>
 
 
@@ -276,65 +263,49 @@
             <h2>Technical Challenges</h2>
 
             <p>
-                - <strong>Smooth Animation State Transitions with Blend Trees</strong>:
-                Connecting player movement to character animation required more than simply
-                switching between individual animation clips. I configured Unity Animator
-                parameters and Blend Trees to translate movement input into animation states,
-                allowing the character to transition smoothly between different locomotion
-                behaviors. Tuning transition conditions and blend values helped prevent abrupt
-                animation changes while keeping the character's visual state synchronized with
-                player movement.
+                - <strong>Standalone Meta Quest Deployment</strong>:
+                Resolved Android/OpenXR compatibility issues and mobile render pipeline discrepancies, ensuring custom
+                water shaders, particle systems,
+                and gameplay systems functioned correctly on the headset.
             </p>
             <br>
             <p>
-                - <strong>Memory Management via Asset & Texture Optimization</strong>:
-                The project's original assets created an unnecessarily large memory and storage
-                footprint, particularly through high-resolution textures whose full resolution
-                was not visually necessary during gameplay. I profiled the project's asset usage through analyzing
-                Unity build reports and reduced textures from resolutions as high as 4K to 1K where appropriate.
-                This significantly reduced their memory requirements while preserving acceptable
-                visual quality. Combined with additional asset cleanup and optimization, these
-                changes reduced the packaged project from approximately 2.8 GB to roughly
-                100 MB.
+                - <strong>VR Performance Optimization</strong>:
+                Optimized enemy navigation and rendering configurations, using practices such as material pooling, to
+                improve frame rates and maintain smoother gameplay on
+                VR hardware. Optimized environment geometry, including usage of ramps instead of stairs for a smoother
+                frame rate.
             </p>
             <br>
             <p>
-                - <strong>Implementing a Ball Pit that Avoids Performance Drop</strong>:
-                Creating a convincing ball pit required a large number of simultaneously visible
-                and physics-enabled GameObjects, making a straightforward implementation
-                expensive for both rendering and physics simulation. Instead of manually
-                constructing the pit, I used scripted object instantiation and organized the
-                balls through controlled material groupings. I balanced the number of active
-                objects and their visual variety against the cost of rendering and simulating
-                many individual objects, allowing the ball pit to remain interactive without
-                creating an excessive performance drop.
+                - <strong>Mastering Unity's XR Interaction Toolkit</strong>:
+                Having never built a game in VR prior to this project, I was able to obtain hands-on experience with
+                multiple important VR practices, including Tracked Pose Drivers,
+                Locomotion (Move, Gravity, and Jump Providers), Grab Interactables, Socket Interactables, Hinge Joints
+                and Ray Interactions.
             </p>
             <br>
             <p>
-                - <strong>Cone Obstacle Fairness Assurance</strong>:
-                The alternating cone obstacle needed to remain challenging without producing
-                patterns that felt unpredictable or impossible to react to. I implemented the
-                obstacle as a timed state sequence in which groups of cones alternate between
-                active and inactive states. These state changes were synchronized with an audio
-                ticking cue, giving the player readable feedback about when the obstacle would
-                change. Coordinating gameplay state with consistent timing and audio feedback
-                allowed the obstacle to create difficulty through player reaction and pattern
-                recognition rather than arbitrary failure. In addition, instead of completely setting
-                cone objects active/inactive, I reassigned them to a translucent material and disabled their
-                colliders when the corresponding colored cones were in the inactive state.
+                - <strong>XR Physics and Interactions</strong>:
+                Debugged collision conflicts between the VR player and interactable weapons, refined grabbing mechanics,
+                and implemented reliable projectile collision and damage detection with enemy plushies.
+                Ensured robustness of gravity and jump systems to handle spam input or game object interference.
+                Developed a weapon interaction system that allows weapons to snap to the player's hand when
+                interacted with using the Ray Interactor.
             </p>
             <br>
             <p>
-                - <strong>Keyboard/Gamepad Playability</strong>:
-                Supporting both keyboard and gamepad controls required the same movement and
-                gameplay systems to respond consistently to different forms of input. I mapped
-                equivalent player actions across both control methods and connected them to the
-                same underlying movement and animation logic rather than creating separate
-                gameplay implementations. This allowed players to switch input methods while
-                preserving consistent movement behavior, animation responses, and gameplay
-                functionality.
+                - <strong>AI Navigation and Behavior</strong>:
+                Engineered responsive enemy AI using priority-based AI blackboards and behavior trees, conditional
+                transitions, and NavMesh pathfinding. Resolved patrol interruptions, unreachable destinations,
+                and navigation restrictions across complex environments.
             </p>
-
+            <br>
+            <p>
+                - <strong>Procedural Enemy Spawning</strong>:
+                Developed randomized spawning within designated map zones for each plushy type, addressing invalid
+                NavMesh positions, patrol initialization, and enemy placement constraints.
+            </p>
         </section>
         <section class="project-details-section">
 
@@ -347,7 +318,7 @@
                     GitHub
                 </a>
 
-                <a href="https://dylanabry.itch.io/pyrokour-dojo" target="_blank">
+                <a href="https://dylanabry.itch.io/wuvlie-warfare" target="_blank">
                     <i class="fas fa-gamepad"></i>
                     Play on itch.io
                 </a>
